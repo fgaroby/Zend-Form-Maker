@@ -1,0 +1,296 @@
+#mainTitle {
+	font-size: 20px;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+#mainTitle .formFilename {
+	color: #ff661b;
+	font-weight: bold;
+}
+
+.imgHelper {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+}
+
+/*************************************
+ * Element draggable area
+ *************************************/
+#elementSidebar {
+	width: 190px;
+	position: fixed;
+	top: 5px;
+	bottom: 75px;
+	left: 0px;
+	border: 1px solid grey;
+	border-bottom: none;
+	background-color: white;
+	color: #ff8f00;
+	overflow: auto;
+	z-index: 3000;
+}
+
+#elementSidebar #sideBarHelp
+{
+	float: right;
+	margin-right: 15px;
+}
+
+#elementSidebar .elements {
+	
+}
+
+#elementSidebar #elementFirstPart,#elementSidebar #elementSecondPart {
+	position: fixed;
+	top: 80px;
+	left: 15px;
+}
+
+#elementSidebar #elementFirstPart {
+	
+}
+
+#elementSidebar #elementSecondPart {
+	display: none;
+}
+
+#elementSidebar #switchPart {
+	text-align: center;
+	cursor: pointer;
+}
+
+#showHideElementGroup {
+	width: 20px;
+	border: 1px solid grey;
+	border-left: none;
+	cursor: pointer;
+	background-color: white;
+	text-align: center;
+	position: fixed;
+
+	display:none; /*will be show by js*/
+}
+
+#elementSidebar .formElement {
+	width: 130px;
+	min-height: 50px;
+	border-radius: 15px;
+	background-color: #EEEEEE;
+	text-align: center;
+	margin-bottom: 15px;
+	cursor: pointer;
+}
+
+#elementSidebar .formElement input[type="text"],
+#elementSidebar .formElement input[type="password"],
+#elementSidebar .formElement input[type="submit"],
+#elementSidebar .formElement input[type="button"],
+#elementSidebar .formElement textarea
+{
+	border: 1px solid #ff8f00;
+	background-color: white;
+}
+
+#elementSidebar .formElement textarea {
+	width: 90px;
+	height: 50px;
+}
+
+/*************************************
+* The footer
+*************************************/
+#formMakerFooter {
+	height: 75px;
+	position: fixed;
+	bottom: 5px;
+	left: 0px;
+	right: 0px;
+	background-color: white;
+	z-index: 3500;
+	border: 1px solid grey;
+}
+
+#trash {
+	width: 425px;
+	height: 50px;
+	border: 2px solid red;
+	position: fixed;
+	bottom: 8px;
+	right: 5px;
+}
+
+#actions {
+	height: 50px;
+	border: 2px solid green;
+	position: fixed;
+	bottom: 8px;
+	left: 5px;
+	right: 480px;
+}
+
+#actions .cell img {
+	float: left;
+}
+
+#actions .cellRightPart {
+	float: left;
+	display: none;
+}
+
+#actions .cell {
+	float: left;
+	cursor: pointer;
+}
+
+#actions .cell a {
+	float: left;
+	text-decoration: none;
+}
+
+#actions .separator {
+	width: 1px;
+	height: 30px;
+	border-left: 1px solid black;
+}
+
+#actions .spacer_h5 {
+	height: 30px;
+}
+
+/*************************************
+ * Drop element area
+ *************************************/
+#formRenderArea {
+	border: 1px solid grey;
+	width: 900px;
+	min-height: 400px;
+	height: auto;
+	margin-left: 100px;
+}
+
+.ui-drop-hover {
+	background-color: #ffe3b1;
+}
+
+.zfm-sortable-placeholder {
+	height: 30px;
+	background-color: #f5ff09;
+	border: 1px solid #ffc723;
+}
+
+.sortable {
+	
+}
+
+.sortable td {
+	vertical-align: middle;
+}
+
+.handle {
+	background-image: url("../images/zfm/handle.png");
+	background-repeat: no-repeat;
+	width: 16px;
+	height: 16px;
+	cursor: move;
+}
+
+.elementPart {
+	
+}
+
+/*************************************
+* Form settings
+**************************************/
+#formSettings {
+	display: none;
+}
+
+#formSettings #attributesArea {
+	
+}
+
+#formSettings #attributesArea #attributEditLine {
+	float: left;
+}
+
+#formSettings #attributesArea #attributEditLine .element {
+	
+}
+
+#formSettings #attributesArea #attributEditLine input[type="text"] {
+	width: 150px;
+	height: 20px;
+}
+
+#formSettings #attributesArea #attributEditLine .elementSubmit {
+	text-align: center;
+}
+
+#formSettings #attributesArea #elementAttributes {
+	float: left;
+	width: 300px;
+	min-height: 30px;
+	border: 1px solid black;
+	padding: 5px;
+	background-color: white;
+}
+
+#formSettings #attributesArea #attribDefaultLine {
+	display: none;
+}
+
+#formSettings #attributesArea .attrib .datasArea,#formSettings #attributesArea .attrib .actionsArea
+	{
+	float: left;
+}
+
+#formSettings #attributesArea .attrib .datasArea {
+	cursor: pointer;
+}
+
+#formSettings #attributesArea .attrib .datasArea .attName {
+	color: red;
+}
+
+#formSettings #attributesArea .attrib .datasArea .attValue {
+	color: blue;
+}
+
+#formSettings #attributesArea .attrib .actionsArea .attribDelete {
+	cursor: pointer;
+}
+
+#formSettings #attributesArea .attrib .datasArea img {
+	float: left;
+}
+
+/*************************************
+ * Context menu
+ *************************************/
+#formElementMenu {
+	display: none;
+}
+
+/*************************************
+ * Warning dialog form
+ *************************************/
+#buildInfosDialog {
+	
+}
+
+#buildInfosDialog .line {
+	
+}
+
+#buildInfosDialog .line .extraDatas {
+	text-decoration: none;
+	float: right;
+}
+
+#buildInfosDialog .more {
+	display: none;
+	background-color: white;
+	border: 1px solid black;
+}

@@ -1,0 +1,371 @@
+#dialogForm {
+	display: none;
+}
+
+#dialogForm #tabs {
+	overflow: auto;
+	height: 500px;
+}
+
+/*************************************
+ * GENERAL TAB
+ *************************************/
+#dialogForm #generalArea {
+	overflow: hidden;
+}
+
+#dialogForm #GeneralTab {
+	height: 400px;
+	overflow: auto;
+}
+
+#dialogForm #generalArea input[type="text"] {
+	width: 200px;
+}
+
+#dialogForm #generalArea .tabGeneralFormElement .title {
+	width: 150px;
+	float: left;
+}
+
+#dialogForm #generalArea .tabGeneralFormElement .input {
+	float: left;
+}
+
+#dialogForm #generalArea .tabGeneralFormElement .description {
+	float: left;
+	width: 20px;
+	padding-left: 20px;
+}
+
+/*************************************
+	GENERAL TAB ATTRIBUTES MANAGEMENT
+*************************************/
+#generalArea #attributesArea {
+	
+}
+
+#generalArea #attributesArea #attributEditLine {
+	float: left;
+}
+
+#generalArea #attributesArea #attributEditLine .element {
+	
+}
+
+#generalArea #attributesArea #attributEditLine input[type="text"] {
+	width: 150px;
+	height: 20px;
+}
+
+#generalArea #attributesArea #attributEditLine .elementSubmit {
+	text-align: center;
+}
+
+#generalArea #attributesArea #elementAttributes {
+	float: left;
+	width: 300px;
+	border: 1px solid black;
+	padding: 5px;
+	background-color: white;
+}
+
+#generalArea #attributesArea #attribDefaultLine {
+	display: none;
+}
+
+#generalArea #attributesArea .attrib .datasArea,#generalArea #attributesArea .attrib .actionsArea
+	{
+	float: left;
+}
+
+#generalArea #attributesArea .attrib .datasArea {
+	cursor: pointer;
+}
+
+#generalArea #attributesArea .attrib .datasArea .attName {
+	color: red;
+}
+
+#generalArea #attributesArea .attrib .datasArea .attValue {
+	color: blue;
+}
+
+#generalArea #attributesArea .attrib .actionsArea .attribDelete {
+	cursor: pointer;
+}
+
+#generalArea #attributesArea .attrib .datasArea img {
+	float: left;
+}
+
+/*************************************
+ * VALIDATOR TAB
+ *************************************/
+#dialogForm #validatorsArea {
+	
+}
+
+#dialogForm #validatorsArea #validatorsManage {
+	width: 180px;
+	float: left;
+}
+
+#dialogForm #validatorsArea #validatorsManage #addValidator {
+	width: 160px;
+}
+
+#dialogForm #validatorsArea #rightPart {
+	float: left;
+}
+
+#dialogForm #validatorsArea #description {
+	width: 470px;
+}
+
+#dialogForm #validatorsArea #config {
+	width: 470px;
+}
+
+#dialogForm #validatorsArea #addValidatorButton {
+	float: right;
+	cursor: pointer;
+}
+
+#dialogForm #validatorsArea #deleteValidatorButton {
+	float: right;
+	cursor: pointer;
+}
+
+#dialogForm #validatorsArea select#addValidator {
+	width: 160px;
+}
+
+#dialogForm #validatorsArea select#validatorsList {
+	width: 160px;
+	height: 120px;
+}
+
+#dialogForm #validatorsArea input[type="text"] {
+	width: 200px;
+}
+
+#dialogForm #validatorsArea .tabValidatorFormElement .title {
+	width: 100px;
+	float: left;
+}
+
+#dialogForm #validatorsArea .tabValidatorFormElement .input {
+	float: left;
+}
+
+#dialogForm #validatorsArea .tabValidatorFormElement .description {
+	float: left;
+	width: 20px;
+	padding-left: 20px;
+}
+
+#dialogForm #validatorsArea #config .validatorHelper {
+	float: right;
+}
+
+#dialogForm #validatorsArea #config .validatorHelper img {
+	cursor: pointer;
+}
+
+/*************************************
+ * FILTERS TAB
+ *************************************/
+#dialogForm #filtersArea {
+	
+}
+
+#dialogForm #filtersArea #filtersManage {
+	width: 180px;
+	float: left;
+}
+
+#dialogForm #filtersArea #filtersManage #addFilters {
+	width: 160px;
+}
+
+#dialogForm #filtersArea #rightPart {
+	float: left;
+}
+
+#dialogForm #filtersArea #description {
+	width: 430px;
+}
+
+#dialogForm #filtersArea #config {
+	width: 430px;
+}
+
+#dialogForm #filtersArea #addFilterButton {
+	float: right;
+	cursor: pointer;
+}
+
+#dialogForm #filtersArea #deleteFilterButton {
+	float: right;
+	cursor: pointer;
+}
+
+#dialogForm #filtersArea select#addFilter {
+	width: 160px;
+}
+
+#dialogForm #filtersArea select#filtersList {
+	width: 160px;
+	height: 120px;
+}
+
+#dialogForm #filtersArea input[type="text"] {
+	width: 200px;
+}
+
+#dialogForm #filtersArea .tabFiltersFormElement .title {
+	width: 100px;
+	float: left;
+}
+
+#dialogForm #filtersArea .tabFiltersFormElement .input {
+	float: left;
+}
+
+#dialogForm #filtersArea .tabFiltersFormElement .description {
+	float: left;
+	width: 20px;
+	padding-left: 20px;
+}
+
+#dialogForm #filtersArea #config .filtersHelper {
+	float: right;
+}
+
+#dialogForm #filtersArea #config .filtersHelper img {
+	cursor: pointer;
+}
+
+/*************************************
+ * OPTIONS TAB MULTI OPTIONS
+ *************************************/
+#dialogForm #optionsArea {
+	
+}
+
+#dialogForm #optionsArea #optionsManage {
+	width: 180px;
+	float: left;
+}
+
+#dialogForm #optionsArea #optionsManage #addOption {
+	width: 160px;
+}
+
+#dialogForm #optionsArea #rightPart {
+	float: left;
+}
+
+#dialogForm #optionsArea #description {
+	width: 430px;
+}
+
+#dialogForm #optionsArea #config {
+	width: 430px;
+}
+
+#dialogForm #optionsArea #addOptionButton {
+	float: right;
+	cursor: pointer;
+}
+
+#dialogForm #optionsArea #deleteOptionButton {
+	float: right;
+	cursor: pointer;
+}
+
+#dialogForm #optionsArea select#addOption {
+	width: 160px;
+}
+
+#dialogForm #optionsArea select#optionsList {
+	width: 160px;
+	height: 120px;
+}
+
+#dialogForm #optionsArea input[type="text"] {
+	width: 200px;
+}
+
+#dialogForm #optionsArea .tabOptionsFormElement .title {
+	width: 150px;
+	float: left;
+}
+
+#dialogForm #optionsArea .tabOptionsFormElement .input {
+	float: left;
+}
+
+#dialogForm #optionsArea .tabOptionsFormElement .description {
+	float: left;
+	width: 20px;
+	padding-left: 20px;
+}
+
+/*************************************
+ * DECORATROS TAB 
+ *************************************/
+#dialogForm #decoratorsArea {
+	
+}
+
+#dialogForm #decoratorsArea #decHeader {
+	width: 450px;
+	border: 1px solid black;
+	margin: auto;
+	padding: 5px;
+}
+
+#dialogForm #decoratorsArea #decHeader .decElement {
+	float: left;
+}
+
+#dialogForm #decoratorsArea #decHeader .decElement input[type="text"] {
+	width: 200px;
+}
+
+#dialogForm #decoratorsArea #decHeader .decSubmit {
+	text-align: center;
+}
+
+#dialogForm #decoratorsArea #decHeader .decSubmit input[type="submit"] {
+	width: 40px;
+}
+
+#dialogForm #decoratorsArea #decList {
+	width: 450px;
+	margin: auto;
+}
+
+#dialogForm #decoratorsArea #decList .line {
+	background-color: #EEEEEE;
+	border-radius: 15px;
+	padding: 5px;
+}
+
+#dialogForm #decoratorsArea #decList .line .actions {
+	float: left;
+}
+
+#dialogForm #decoratorsArea #decList .line .decClass {
+	margin-left: 15px;
+	float: left;
+	width: 150px;
+}
+
+#dialogForm #decoratorsArea #decList .line .decOptions {
+	margin-left: 15px;
+	width: 200px;
+	float: left;
+}

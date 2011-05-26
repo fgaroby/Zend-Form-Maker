@@ -1,0 +1,96 @@
+#formListH1 {
+	text-align: center;
+}
+
+#addFormLink
+{
+	text-align: center;
+}
+
+#errorsForm
+{
+	color: red;
+}
+
+#addFormLink a
+{
+	font-size: 18px;	
+	color: black;
+	text-decoration: none;
+}
+
+#createForm {
+	text-align: center;
+	display: none;
+}
+
+#createForm .unselectedField
+{
+	font-style: italic;
+	color: grey;
+}
+
+#formList {
+	width: 700px;
+	margin: auto;
+	border-collapse: collapse;
+}
+
+#formList tr {
+	cursor: pointer;
+}
+
+#formList th.actions {
+	width: 80px;
+}
+
+#formList th.header {
+	height: 30px;
+	border-bottom: 3px double black;
+	font-weight: normal;
+	font-size: 18px;
+	text-align: left;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+#formList th.showFile {
+	text-align: center;
+}
+
+#formList td.actions {
+	
+}
+
+#formList td.actions input,#formList td.actions a {
+	float: left;
+	display: none;
+}
+
+#formList td.cell {
+	height: 18px;
+	font-size: 16px;
+	vertical-align: middle;
+	border-bottom: 1px solid black;
+	padding-left: 8px;
+	padding-right: 8px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+#formList td.cell a {
+	color: black;
+	text-decoration: none;
+}
+
+#formList td.showFile {
+	text-align: center;
+}
+
+#formList .odd .cell {
+	background-color: #feedb7;
+}
+
+#formList .even .cell {
+	background-color: #d7d7d7;
+}
