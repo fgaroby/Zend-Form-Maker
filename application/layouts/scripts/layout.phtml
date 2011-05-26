@@ -1,0 +1,77 @@
+<?php
+echo $this->doctype();
+?>
+<html>
+<head>
+    <?php
+    echo $this->headMeta();
+    ?>
+    
+    <?php
+    echo $this->headTitle();
+    ?>
+        
+    <?php
+    echo $this->headLink();
+    ?>
+    
+            
+    <link type="image/png" rel="icon" href="/images/icone.png" />
+</head>
+<body>
+
+<noscript>
+	<div id="noscriptAlert">
+		Please note that this application won't work until you active the javascript. 
+		You may be able to access some pages,but the mains features won't probably work for you.
+	</div>
+</noscript>
+
+<div id="topPan">
+    <h1>Zend Form Maker v1.0</h1>
+    <h2>ZFM : It has never been so easy to create your form</h2>
+    <ul>
+    	<li class="active">
+    		<a href="/Index/index">Home</a>
+    	</li>
+    
+    	<li>
+    		<a href="<?php echo $this->url(array('controller' => 'Index', 'action' => 'form-list')); ?>">Form lists</a>
+    	</li>
+    
+    	<li>
+    		<a href="<?php echo $this->url(array('controller' => 'Index', 'action' => 'Help')); ?>">Help</a>
+    	</li>
+    
+    	<li class="contact">
+    		<a href="<?php echo $this->url(array('controller' => 'Index', 'action' => 'About')); ?>" class="contact">About</a>
+    	</li>
+    </ul>
+</div>
+
+<div id="bodyPan">
+    <div id="bodyContent">    
+    	<?php echo $this->layout()->content; ?>
+	</div>
+</div>
+
+<div id="mainfooterbody">
+    <div id="footerPan">
+    	<span class="myfooter">Design modified by Matthieu Di Blasio</span>
+    	<span class="originalDesign">
+    		- Original design by <a href="http://www.templateworld.com">template world</a> (technical design)
+    	</span>
+    </div>
+</div>
+
+
+<div id="ajaxLoader"><img src="/images/zfm/loader.gif" /></div>
+<div id="ajaxErrorDetails"></div>
+<div id="dialogAlertMsg"></div>
+<div id="dialogConfirmation"></div>
+
+    
+<?php echo $this->headScript(); ?>
+
+</body>
+</html>

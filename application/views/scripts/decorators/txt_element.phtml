@@ -1,0 +1,33 @@
+<div class="<?php echo $this->class ?>">
+
+	<div class="title">
+    	<?php if ($this->element->getAttrib('title')) : ?>
+        	<span title="<?php echo htmlentities($this->element->getAttrib('title')); ?>" class="optionHelp">
+    			<img src="/images/zfm/questionmark.png" alt="Help" />
+    		</span>
+    	<?php endif; ?>
+    	<?php 
+    	    echo $this->formLabel($this->element->getName(), $this->element->getLabel()); 	    
+    	    echo ($this->element->isRequired()) ? '*' : ''; 
+    	?>    	
+	</div>
+	
+	<div class="input" >
+		<?php
+		// Affiche le champs
+		echo $this->{$this->element->helper}
+		(
+			$this->element->getName(),
+			$this->element->getValue(),
+			$this->element->getAttribs()
+		)
+		?>
+	</div>
+	
+	<div class="description">
+		<?php echo $this->element->getDescription(); ?>
+	</div>
+	
+</div>
+
+<div class="cleaner spacer_v15"></div>

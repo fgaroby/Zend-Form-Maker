@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<filters>
+	<link></link>
+	
+	<filter class="Zend_Filter_Alnum">
+		<desc>La donnée filtrée verra ses caractères non alphanumériques supprimés.</desc>
+		
+		<codes>
+			<code></code>
+			<code>array('allowwhitespace' => true)</code>
+		</codes>
+	</filter>
+	
+	<filter class="Zend_Filter_Alpha">
+		<desc>La donnée filtrée verra ses caractères non alphabétiques supprimés.</desc>
+		
+		<codes>
+			<code></code>
+			<code>array('allowwhitespace' => true)</code>
+		</codes>
+	</filter>
+	
+	<filter class="Zend_Filter_BaseName">
+		<desc>Ce filtre retourne le nom du fichier dans une chaine représentant un chemin vers ce dernier.</desc>
+		
+		<codes>
+			<code></code>
+		</codes>
+	</filter>
+	
+	<filter class="Zend_Filter_Boolean">
+		<desc>La donnée filtrée est transtypée en booléen.</desc>
+		
+		<codes>
+			<code></code>
+			<code>Zend_Filter_Boolean::CONST</code>
+			<code>array('type' => array('shortname'))</code>
+			<code>array('type' => array('shortname'), 'locale' => 'de')</code>
+			<code>array('type' => array('shortname'), 'casting' => true)</code>
+			
+			<code>array('type' => array(Zend_Filter_Boolean::CONST))</code>
+			<code>array('type' => array(Zend_Filter_Boolean::CONST), 'locale' => 'de')</code>
+			<code>array('type' => array(Zend_Filter_Boolean::CONST), 'casting' => true)</code>
+		</codes>
+		
+		<help>
+			<options for="Zend_Filter_Boolean::CONST">
+				<option>BOOLEAN or 'boolean'</option>
+				<option>INTEGER or 'integer'</option>
+				<option>FLOAT or 'float'</option>
+				<option>STRING or 'string'</option>
+				<option>ZERO or 'zero'</option>
+				<option>EMPTY_ARRAY or 'array'</option>
+				<option>NULL or 'null'</option>
+				<option>PHP or 'php'</option>
+				<option>FALSE_STRING or 'false'</option>
+				<option>YES or 'yes'</option>
+				<option>ALL or 'all'</option>
+			</options>
+		</help>
+	</filter>
+	
+	<filter class="Zend_Filter_Callback">
+		<desc>La donnée sera filtrée par rapport à une fonction utilisateur.</desc>
+		
+		<codes>
+			<code>'funcName'</code>
+			<code>array('className', 'methodName')</code>
+			<code>array('callback' => 'funcName', 'options' => array('option1', 'option2'))</code>
+			<code>array('callback' => array('className', 'methodName'), 'options' => array('option1', 'option2'))</code>
+		</codes>
+	</filter>
+	
+	<filter class="Zend_Filter_Compress">
+		<desc>La donnée filtrée est compressée par l'adaptateur en fonction des options données.</desc>
+		
+		<codes>
+			<code>'adapterName'</code>
+			<code>array('adapter' => 'adapterName', 'options' => array('Please read the help'))</code>
+		</codes>
+		
+		<help>
+			<options for="adapterName">
+				<option>Bz2</option>
+				<option>Gz</option>
+				<option>Lzf</option>
+				<option>Rar</option>
+				<option>Tar</option>
+				<option>Zip</option>
+			</options>
+			
+			<options for="Bz2 options">
+				<option>array('archive' => 'name.bz2')</option>
+				<option>array('blocksize' => 8)</option>
+				<option>array('archive' => 'name.bz2', 'blocksize' => 8)</option>
+			</options>
+			
+			<options for="Gz options">
+				<option>array('archive' => 'name.bz2')</option>
+				<option>array('level' => 0-9)</option>
+				<option>array('mode' => 'compress' or 'deflate')</option>
+				<option>array('archive' => 'name.bz2', 'level' => 0-9, 'mode' => 'compress')</option>
+			</options>
+			
+			<options for="Lzf options">
+				<option>Nothing !</option>
+			</options>
+			
+			<options for="Rar options">
+				<option>array('archive' => 'name.bz2')</option>
+				<option>array('callback' => 'something')</option>
+				<option>array('password' => 'secret password')</option>
+				<option>array('target' => '/path/to/put/the/result')</option>
+			</options>
+			
+			<options for="Tar options">
+				<option>array('archive' => 'name.bz2')</option>
+				<option>array('mode' => 'NULL' or 'Gz' or 'Bz2')</option>
+				<option>array('target' => '/path/to/put/the/result')</option>
+			</options>
+			
+			<options for="Zip options">
+				<option>array('archive' => 'name.bz2')</option>
+				<option>array('target' => '/path/to/put/the/result')</option>
+			</options>
+		</help>
+	</filter>
+	
+	<filter class="Zend_Filter_Decompress">
+		<desc>La donnée filtrée est décompressée par l'adaptateur en fonction des options données.</desc>
+				
+		<codes>
+			<code>'adapterName'</code>
+			<code>array('adapter' => 'adapterName', 'options' => array('Please read the help'))</code>
+		</codes>
+		
+		<help>
+			<options for="adapterName">
+				<option>Bz2</option>
+				<option>Gz</option>
+				<option>Lzf</option>
+				<option>Rar</option>
+				<option>Tar</option>
+				<option>Zip</option>
+			</options>
+			
+			<options for="Bz2 options">
+				<option>array('archive' => 'name.bz2')</option>
+				<option>array('blocksize' => 8)</option>
+				<option>array('archive' => 'name.bz2', 'blocksize' => 8)</option>
+			</options>
+			
+			<options for="Gz options">
+				<option>array('archive' => 'name.bz2')</option>
+				<option>array('level' => 0-9)</option>
+				<option>array('mode' => 'compress' or 'deflate')</option>
+				<option>array('archive' => 'name.bz2', 'level' => 0-9, 'mode' => 'compress')</option>
+			</options>
+			
+			<options for="Lzf options">
+				<option>Nothing !</option>
+			</options>
+			
+			<options for="Rar options">
+				<option>array('archive' => 'name.bz2')</option>
+				<option>array('callback' => 'something')</option>
+				<option>array('password' => 'secret password')</option>
+				<option>array('target' => '/path/to/put/the/result')</option>
+			</options>
+			
+			<options for="Tar options">
+				<option>array('archive' => 'name.bz2')</option>
+				<option>array('mode' => 'NULL' or 'Gz' or 'Bz2')</option>
+				<option>array('target' => '/path/to/put/the/result')</option>
+			</options>
+			
+			<options for="Zip options">
+				<option>array('archive' => 'name.bz2')</option>
+				<option>array('target' => '/path/to/put/the/result')</option>
+			</options>
+		</help>
+	</filter>
+	
+	<filter class="Zend_Filter_Digits">
+		<desc>La donnée filtrée verra ses caractères non numériques supprimés.</desc>
+		
+		<codes>
+			<code></code>
+		</codes>
+	</filter>
+	
+	<filter class="Zend_Filter_Dir">
+		<desc>Retourne le chemin vers un fichier en retirant celui-ci.</desc>
+		
+		<codes>
+			<code></code>
+		</codes>
+	</filter>
+	
+	<filter class="Zend_Filter_Decrypt">
+		<desc>La donnée sera décryptée avec la méthode spécifiée dans "adapter".</desc>
+		
+		<codes>
+			<code>array('adapter' => 'mcrypt' | 'openssl', 'options' => array('Please read the help'))</code>
+		</codes>
+		
+		<help>
+			<options for="mcrypt options">
+				<option>Array(</option>
+				<option>'key' => string,</option>
+				<option>'algorithm' => string ,</option>
+				<option>'algorithm_directory' =>string ,</option>
+				<option>'mode' => string ,</option>
+				<option>'mode_directory' => string,</option>
+				<option>'vector' => string ,</option>
+				<option>'salt' => bool </option>
+				<option>)</option>
+			</options>
+			
+			<options for="openssl options">
+				<option>Array(</option>
+				<option>'envelope' => string,</option>
+				<option>'passphrase' => string,</option>
+				<option>'compression' => string,</option>
+				<option>'package' => bool,</option>
+				<option>'private' => string,</option>
+				<option>'public' => string </option>
+				<option>)</option>
+			</options>
+		</help>
+	</filter>
+	
+	<filter class="Zend_Filter_Encrypt">
+		<desc>La donnée filtrée sera encryptée avant d'être retournée.</desc>
+		
+		<codes>
+			<code>array('adapter' => 'mcrypt' | 'openssl', 'options' => array('Please read the help'))</code>
+		</codes>
+				
+		<help>
+			<options for="mcrypt options">
+				<option>Array(</option>
+				<option>'key' => string,</option>
+				<option>'algorithm' => string ,</option>
+				<option>'algorithm_directory' =>string ,</option>
+				<option>'mode' => string ,</option>
+				<option>'mode_directory' => string,</option>
+				<option>'vector' => string ,</option>
+				<option>'salt' => bool</option>
+				<option>)</option>
+			</options>
+			
+			<options for="openssl options">
+				<option>Array(</option>
+				<option>'envelope' => string,</option>
+				<option>'passphrase' => string,</option>
+				<option>'compression' => string,</option>
+				<option>'package' => bool,</option>
+				<option>'private' => string,</option>
+				<option>'public' => string </option>
+				<option>)</option>
+			</options>
+		</help>
+	</filter>
+	
+	
+	<filter class="Zend_Filter_HtmlEntities">
+		<desc>La valeur sera filtrée comme avec la fonction php native htmlentities.</desc>
+		
+		<codes>
+			<code></code>
+			<code>array('quotestyle' => CONST)</code>
+			<code>array('charset' => 'UTF-8')</code>
+			<code>array('doublequote' => true)</code>
+		</codes>
+		
+		<help>
+			<options for="CONST">
+				<option>ENT_COMPAT</option>
+				<option>ENT_QUOTES</option>
+				<option>ENT_NOQUOTES</option>
+				<option>ENT_IGNORE</option>
+			</options>
+			
+			<options for="charset">
+				<option>ISO-8859-1</option>
+				<option>ISO-8859-15</option>
+				<option>UTF-8</option>
+				<option>cp866</option>
+				<option>cp1251</option>
+				<option>cp1252</option>
+				<option>KOI8-R</option>
+				<option>BIG5</option>
+				<option>GB2312</option>
+				<option>BIG5-HKSCS</option>
+				<option>Shift_JIS</option>
+				<option>EUC-JP</option>
+			</options>
+		</help>
+	</filter>
+	
+	<filter class="Zend_Filter_Int">
+		<desc>Ce filtre transforme une valeur scalaire contenant un chiffre en entier.</desc>
+		
+		<codes>
+			<code></code>
+		</codes>
+	</filter>
+	
+	<filter class="Zend_Filter_LocalizedToNormalized">
+		<desc>La donnée filtrée (à un format localisée) va être normalisée.
+
+Une date au format spécifique d'un pays sera par exemple convertie en date à un format personnalisé, de même pour un nombre.
+
+Exemple : 
+le nombre 123.456,78901 sera transformé en 123456.79</desc>
+		
+		<codes>
+			<code></code>
+			<code>array('date_format' => 'yyyy')</code>
+			<code>array('locale' => 'de')</code>
+			<code>array('precision' => 3)</code>
+		</codes>
+	</filter>
+	
+	<filter class="Zend_Filter_NormalizedToLocalized">
+		<desc>La donnée filtrée (à un format normalisé) va être localisée.
+
+Une date ou un nombre au format international, ou personnalisé sera convertie au format d'un pays donné.
+
+Exemple : 
+le nombre 123456 sera transformé en 123.456,00</desc>
+		
+		<codes>
+			<code></code>
+			<code>array('date_format' => 'yyyy')</code>
+			<code>array('locale' => 'de')</code>
+			<code>array('precision' => 3)</code>
+		</codes>
+	</filter>
+	
+	<filter class="Zend_Filter_Null">
+		<desc>Retourne NULL en fonction de critères prédéfinis. Par défaut, le comportement de ce filtre reflète le retour de la fonction native "empty".</desc>
+		
+		<codes>
+			<code></code>
+			<code>Zend_Filter_Null::CONST</code>
+			<code>array(Zend_Filter_Null::CONST, Zend_Filter_Null::CONST)</code>
+			<code>array('shortName', 'shortName')</code>
+		</codes>
+		
+		<help>
+			<options for="Zend_Filter_Null::CONST">
+				<option>BOOLEAN or 'boolean'</option>
+				<option>INTEGER or 'integer'</option>
+				<option>'EMPTY_ARRAY' or 'array'</option>
+				<option>STRING or 'string'</option>
+				<option>ZERO or 'zero'</option>
+				<option>ALL or 'all'</option>
+			</options>
+		</help>
+	</filter>
+	
+	<filter class="Zend_Filter_PregReplace">
+		<desc>Ce filtre retourne la valeur entrée, avec les paramètres match remplacé par les paramètres "replace". </desc>
+		
+		<codes>
+			<code>array('match' => 'pattern', 'replace' => 'replaceByThis')</code>
+			<code>array('match' => array('pattern', 'pattern'), 'replace' => array('replaceByThis', 'replaceByThis'))</code>
+		</codes>
+	</filter>
+	
+	<filter class="Zend_Filter_RealPath">
+		<desc>Retourne un chemin avec aucune référence relatif. Aucunes références (/./, /../) ne subsistera.
+
+Le paramètre optionnel permet d'indiquer que le chemin ne doit pas absolument exister.
+		</desc>
+		
+		<codes>
+			<code></code>
+			<code>true</code>
+		</codes>
+	</filter>
+	
+	<filter class="Zend_Filter_StringToLower">
+		<desc>Les caractères de la donnée filtrée seront transformés en minuscule.
+
+Le paramètre optionnel permet d'indiquer le type d'encodage de caractère à utiliser.
+		</desc>
+		
+		<codes>
+			<code></code>
+			<code>'charset'</code>
+		</codes>
+	</filter>
+	
+	<filter class="Zend_Filter_StringToUpper">
+		<desc>Les caractères de la donnée filtrée seront transformés en majuscule.
+
+Le paramètre optionnel permet d'indiquer le type d'encodage de caractère à utiliser.
+		</desc>
+		
+		<codes>
+			<code>''charset'</code>
+		</codes>
+	</filter>
+	
+	<filter class="Zend_Filter_StringTrim">
+		<desc>La donnée filtrée verra ses espaces de début et de fin supprimés.
+
+Si un ou des autre(s) caractère(s) sont passé(s) en paramètre, ceux-ci remplaceront les espaces.
+		</desc>
+		
+		<codes>
+			<code>'charactersToErase'</code>
+		</codes>
+	</filter>
+	
+	<filter class="Zend_Filter_StripTags">
+		<desc>La donnée filtré voit toutes ses balises html supprimées.
+
+Il est possible de passer en paramètre une liste de balises et attributs à ne pas supprimer.
+		</desc>
+		
+		<codes>
+			<code></code>
+			<code>array('allowTags' => array('div', 'p'))</code>
+			<code>array('allowAttribs' => array('class', 'id'))</code>
+			<code>array('allowTags' => array('div', 'p'), 'allowAttribs' => array('class', 'id'))</code>
+		</codes>
+	</filter>
+</filters>

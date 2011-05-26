@@ -1,0 +1,31 @@
+<div class="<?php echo $this->class ?>">
+
+	<div class="title"><?php echo $this->formLabel($this->element->getName(), $this->element->getLabel()); echo ($this->element->isRequired()) ? '*' : ''; ?></div>
+	
+	<div class="input" >
+		<?php
+		$elements = $this->element->getMultiOptions();
+		$checked_values = ($this->element->getValue() != null) ? $this->element->getValue() : array();
+		$boxgroup_name = $this->element->getName();
+		
+		foreach($elements as $id => $label)
+		{
+			$box_id = $boxgroup_name . '-' . $label;
+			$attribs = array(
+							'id' => $box_id,
+							'checked' => in_array($id, $checked_values));
+			
+			echo $this->formCheckbox($boxgroup_name . '[]', $id, $attribs); 
+			echo $this->formLabel($box_id, $label);
+			echo '<br/>' . PHP_EOL;
+		}
+		?>
+	</div>
+	 
+	<div class="hint" id="hint_<?php echo $this->element->getName()?>">  
+		<?php 
+		// Affiche l'aide de saisie
+		echo $this->element->getDescription(); 
+		?>
+	</div>
+</div>

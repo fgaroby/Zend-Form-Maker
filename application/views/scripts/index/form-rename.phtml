@@ -1,0 +1,12 @@
+<h1>Rename a form</h1>
+
+<div id="renameErrors">
+	<?php echo (!empty($this->errorsRename)) ? $this->errorsRename : ''; ?>
+</div>
+
+<form method="post" name="renameFilename" id="renameFilename">
+
+	<input type="hidden" name="oldName" value="<?php echo $this->oldFilename; ?>" />
+	New name : <input type="text" name="newName" id="formFilename" value="<?php echo $this->formFilename; ?>" />
+	<input type="submit" name="sendRename" value="Rename it !" />
+</form>

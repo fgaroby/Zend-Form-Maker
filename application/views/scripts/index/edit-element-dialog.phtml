@@ -1,0 +1,254 @@
+<div id="dialogForm">
+	<div id="tabs">
+    	<ul>
+    		<li><a href="#GeneralTab">General</a></li>
+    		<li><a href="#ValidatorsTab">Validators</a></li>
+    		<li><a href="#FiltersTab">Filters</a></li>
+    		<li><a href="#OptionsTab">Options</a></li>
+    		<li><a href="#DecoratorsTab">Decorators</a></li>
+    	</ul>
+    	
+    	<div id="GeneralTab">
+    		<h1>Edit a form element</h1>
+    		
+    		<div id="generalArea">
+    			<?php echo $this->generalForm; ?>
+    			
+    			Attributs:<br/>
+    			<div id="attributesArea">
+            		<div id="elementAttributes">
+            			<div id="attribDefaultLine">
+                			<div class="attrib"> 
+                			
+                				<div class="actionsArea">
+                    				<img src="/images/zfm/attribDelete.png" alt="delete" title="delete" class="attribDelete" />
+                				</div>
+                				               	
+                				<div class="spacer_h15 floater"></div>
+                						
+                				<div class="datasArea">
+                					<span class="attName">Id</span>="<span class="attValue">mySuperId</span>"
+                				</div>
+                				<div class="cleaner"></div>
+                			</div>
+                			<div class="spacer_v10"></div>
+            			</div>
+            		</div>
+            		
+            		<div class="spacer_h15 floater"></div>
+            		
+            		<div id="attributEditLine">
+            			Add / Edit attribute :<br/>
+            			<div class="element">
+            				<label for="attribName">Name :</label><br/>
+            				<input type="text" id="attribName" value="" /> 
+            			</div>
+            			
+            			<div class="spacer_v15"></div>
+            			
+            			<div class="element">
+            				<label for="attribValue">Value :</label><br/>
+            				<input type="text" id="attribValue" value="" /> 
+            			</div>
+            			
+            			<div class="spacer_v15"></div>
+            			
+            			<div class="element elementSubmit">
+            				<input type="submit" id="addAttributeButton" name="addAttribute" value="Ok" />
+            			</div>
+            		</div>
+            	</div>
+    		</div>
+    	</div>
+    	
+    	<div id="ValidatorsTab">
+    		<h1>Validators</h1>
+    		
+    		<div id="validatorsArea">
+        		<fieldset id="validatorsManage">
+        			<legend>Manage validators</legend>
+        			
+        			<div>
+        				Add a validator<br/>
+        				<select name="addValidator" id="addValidator">
+        					<?php echo $this->validatorsList; ?>
+        				</select>
+        				
+        				<img src="/images/zfm/addValidator.png" alt="add" title="add" id="addValidatorButton" />
+        			</div>
+        			
+        			<div>
+        				Current validators<br/>
+        				<select name="validatorsList" id="validatorsList" size="6">
+        				</select>
+        				
+        				<img src="/images/zfm/trash.gif" alt="delete" title="delete" id="deleteValidatorButton" />
+        			</div>
+        		</fieldset>
+        		
+        		<div class="spacer_h10 floater"></div>
+        		
+        		<div id="rightPart">
+        			<img src="manual link">
+        			
+            		<fieldset id="description">
+            			<legend><a href="" id="className">Zend_Validate_...</a></legend>
+            			
+            			<div id="classDescription">
+            				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut consectetur auctor nibh, eget dapibus quam imperdiet ut. Maecenas tortor nulla, dictum vel elementum vel, 
+            			</div>
+            		</fieldset>
+            		
+            		<div class="spacer_v15"></div>
+            		
+            		<fieldset id="config">
+            			<legend>Arguments</legend>
+            			
+        				<div class="validatorHelper">
+        					<img src="/images/zfm/help.png" alt="Help !" title="Get some help with that class, click here" />
+        				</div>
+        				
+            			<div>
+            				<?php echo $this->validatorInputsForm; ?>
+            			</div>
+            		</fieldset>
+        		</div>
+        		
+        		<div class="validatorsHelpDialog" title="Help">
+        		</div>
+    		</div>
+    	</div>
+    	
+    	<div id="FiltersTab">
+    		<h1>Filters</h1>
+    		
+    		<div id="filtersArea">
+        		<fieldset id="filtersManage">
+        			<legend>Manage filters</legend>
+        			
+        			<div>
+        				Add a filter<br/>
+        				<select name="addFilter" id="addFilter">
+        					<?php echo $this->filtersList; ?>
+        				</select>
+        				
+        				<img src="/images/zfm/addValidator.png" alt="add" title="add" id="addFilterButton" />
+        			</div>
+        			
+        			<div>
+        				Current filters<br/>
+        				<select name="filtersList" id="filtersList" size="6">
+        				</select>
+        				
+        				<img src="/images/zfm/trash.gif" alt="delete" title="delete" id="deleteFilterButton" />
+        			</div>
+        		</fieldset>
+        		
+        		<div class="spacer_h10 floater"></div>
+        		
+        		<div id="rightPart">
+        			<img src="manual link">
+        			
+            		<fieldset id="description">
+            			<legend><a href="" id="className">Zend_Filter_...</a></legend>
+            			
+            			<div id="classDescription">
+            				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut consectetur auctor nibh, eget dapibus quam imperdiet ut. Maecenas tortor nulla, dictum vel elementum vel, 
+            			</div>
+            		</fieldset>
+            		
+            		<div class="spacer_v15"></div>
+            		
+            		<fieldset id="config">
+            			<legend>Arguments</legend>
+            			
+        				<div class="filtersHelper">
+        					<img src="/images/zfm/help.png" alt="Help !" title="Get some help with that class, click here" />
+        				</div>
+        				
+            			<div>
+            				<?php echo $this->filtersInputsForm; ?>
+            			</div>
+            		</fieldset>
+        		</div>
+        		
+        		<div class="filtersHelpDialog" title="Help">
+        		</div>
+    		</div>
+    	</div>
+    	
+    	<div id="OptionsTab">
+    		<h1>Options</h1>
+    		
+    		<div id="optionsArea">
+    			<div id="specialsArea">
+    			</div>
+    			
+        		<div id="multioptions">
+        		
+    				<fieldset id="optionsManage">
+            			<legend>Manage options</legend>
+            			
+            			<div>
+            				Add an option<br/>
+            				<input type="text" name="addOption" id="addOption"/>
+            				
+            				<img src="/images/zfm/addValidator.png" alt="add" title="add" id="addOptionButton" />
+            			</div>
+            			
+            			<div>
+            				Current options<br/>
+            				<select name="optionsList" id="optionsList" size="6">
+            				</select>
+            				
+            				<img src="/images/zfm/trash.gif" alt="delete" title="delete" id="deleteOptionButton" />
+            			</div>
+            		</fieldset>
+            		
+            		<div class="spacer_h10 floater"></div>
+            		
+            		<div id="rightPart">                		
+                		<fieldset id="config">
+                			<legend>Parameters</legend>
+                			
+                			<div>
+                				<?php echo $this->multiOptionsForm; ?>
+                			</div>
+                		</fieldset>
+            		</div>
+        		</div>        		        		
+    		</div>
+    	</div>
+    	
+    	<div id="DecoratorsTab">
+    		<h1>Decorators</h1>
+    		
+    		<div id="decoratorsArea">
+    			<div id="decHeader">
+    				<div class="decElement">
+    					Decorator : <br/>
+    					<input type="text" name="decoratorClass" id="decoratorClass" />
+    				</div>
+    				<div class="spacer_h15 floater"></div>
+    				<div class="decElement">
+    					Options : <br/>
+    					<input type="text" name="decoratorOptions" id="decoratorOptions" />
+    				</div>    				
+    				
+    				<div class="spacer_v10 cleaner"></div>
+    				
+    				<div class="decSubmit">
+    					<input type="hidden" name="decId" id="decId" value="-1" />
+    					<input type="submit" name="decSubmit" id="decSubmit" value="Save" />
+    				</div>
+    			</div>
+    			
+    			<div class="spacer_v15"></div>
+    			
+    			<div id="decList">
+    			
+    			</div>
+    		</div>
+    	</div>
+    </div>
+</div>

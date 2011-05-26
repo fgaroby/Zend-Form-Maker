@@ -1,0 +1,112 @@
+<h1 id="formListH1">Form's list</h1>
+
+<div id="addFormLink">
+	<a href="#">Create a new form</a>
+</div>
+
+<div id="createForm" <?php echo (isset($this->errorsForm)) ? 'style="display:block"' : '';?>>	
+	<div class="spacer_v15"></div>
+	<form action="<?php echo $this->url(array('controller' => 'Index', 'action' => 'form-list'));  ?>" method="post" name="createFormXml" id="createFormXml">
+		<input type="text" name="newFormFilename" id="newFormFilename" value="<?php echo $this->formFilename?>" /> 
+			
+    	<?php 
+    	if (isset($this->errorsForm))
+    	{
+    	    ?>
+    	    <div id="errorsForm">
+    	    	<?php echo $this->errorsForm; ?>
+    	    </div>
+    	    <?php 
+    	}
+    	?>
+		<input type="submit" name="sendFormAdd" id="sendFormAdd" value="Save" />
+		<input type="hidden" name="oldName" id="oldName" value="<?php echo $this->oldFilename?>" />
+	</form>
+
+</div>
+
+<div class="spacer_v30"></div>
+
+<table id="formList">
+	<tr>
+		<th class="actions"></th>
+		<th class="header">Name</th>
+		<th class="header">Last change</th>		
+		<th class="header showFile">See the file</th>
+		<th class="header">Test</th>
+	</tr>
+	
+    <?php 
+    if (empty($this->fileList))
+    {
+        ?>
+        <tr>
+        	<td></td>
+        	<td colspan="4" style="text-align: center;">No form in the directory, start by creating on with the input above.</td>
+        </tr>
+        <?php
+    }
+    
+    $i = 0;
+    foreach ($this->fileList as $fileDatas)
+    {
+        $formMade = isset($fileDatas['formMade']);
+        
+        $urlEdit = $this->url(array('controller' => 'Index', 
+								'action' => 'form-maker', 
+								'formFilename' => $fileDatas['filename']));
+        
+        $urlDelete = $this->url(array('controller' => 'Index', 
+								'action' => 'form-delete', 
+								'formFilename' => $fileDatas['filename']));
+        
+        $urlRename = $this->url(array('controller' => 'Index', 
+								'action' => 'form-rename', 
+								'formFilename' => $fileDatas['realname']));
+
+        // If we've a form to test
+        if ($formMade)
+        {
+            $urlTest = $this->url(array('controller' => 'Index', 
+        								'action' => 'form-test', 
+        								'formFilename' => $fileDatas['formMade']));
+        }
+        ?>
+        <tr class="<?php echo $this->cycle(array('odd', 'even'))->next(); ?>">
+        	<td class="actions">        	
+        		<form action="<?php echo $urlDelete; ?>" method="post">
+        			<input type="hidden" name="formFilename" value="<?php echo $fileDatas['realname']; ?>" />
+        			<input type="image" name="sendDeleteForm" id="sendDeleteForm" value="Delete it !" src="/images/zfm/delete.png" />
+    			</form>
+    			
+    			<div class="spacer_h5 floater"></div>
+    			
+    			<a href="<?php echo $urlRename; ?>" title="Rename" > 
+    				<img src="/images/zfm/rename32.png" alt="Rename the form" /> 
+    			</a>
+    			
+    			<div class="spacer_h10 floater"></div>
+        	</td>
+        	
+    		<td class="cell link">
+				<a href="<?php echo $urlEdit; ?>" title="Edit the form"><?php echo $fileDatas['realname']; ?></a>
+    		</td>
+    		
+    		<td class="cell">
+    		    <?php echo $fileDatas['date']; ?>
+		    </td>
+		    
+    		<td class="cell showFile">
+    			<a href="<?php echo $fileDatas['path']; ?>" title=""><img src="/images/zfm/xml.png" title="See the xml file" alt="show" /></a>
+    		</td>
+    		
+    		<td class="cell">    		
+    		    <?php if ($formMade) : ?>
+    				<a href="<?php echo $urlTest; ?>" title=""><img src="/images/zfm/test.png" title="Test your form" alt="Test it !" /></a>
+    		    <?php endif ; ?>
+    		</td>
+        </tr>
+        <?php 
+    }
+    ?>
+</table>

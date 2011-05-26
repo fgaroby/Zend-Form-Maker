@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<validators>
+	<link>http://framework.zend.com/manual/fr/zend.validate.set.html#zend.validate.set.{class_shortname}</link>
+	
+	<validator class="Zend_Validate_Alnum">
+		<desc>La donnée testée ne doit contenir que des caractères alphanumériques.</desc>
+		
+		<codes>
+			<code>array('allowWhiteSpace' => true)</code>
+		</codes>
+	</validator>
+		
+	<validator class="Zend_Validate_Alpha">
+		<desc>La donnée testée ne doit contenir que des caractères alphabétiques.</desc>
+
+		<codes>
+			<code>array('allowWhiteSpace' => true)</code>
+		</codes>
+		<help>
+		</help>
+	</validator>
+		
+	<validator class="Zend_Validate_Barcode">
+		<desc>La données testée doit correspondre à un format standard de code barre.</desc>
+		
+		<codes>
+			<code>'adapterName'</code>			
+			<code>array('adapter' => 'adapterName')</code>
+			<code>array('adapter' => 'adapterName', 'checksum' => true)</code>
+		</codes>
+		
+		<help>
+			<options for="Adapter name">
+				<option>CODE25</option>					
+				<option>CODE25INTERLEAVED</option>
+				<option>CODE39</option>
+				<option>CODE39EXT</option>
+				<option>CODE93</option>
+				<option>CODE93EXT </option>
+				<option>EAN2</option>
+				<option>EAN5</option>
+				<option>EAN8</option>
+				<option>EAN12</option>
+				<option>EAN13</option>
+				<option>EAN14</option>
+				<option>EAN18</option>
+				<option>GTIN12</option>
+				<option>GTIN13</option>
+				<option>GTIN14</option>
+				<option>IDENTCODE</option>
+				<option>INTELLIGENTMAIL</option>
+				<option>ISSN</option>
+				<option>ITF14</option>
+				<option>LEITCODE</option>
+				<option>PLANET</option>
+				<option>POSTNET</option>
+				<option>ROYALMAIL</option>
+				<option>SSCC</option>
+				<option>UPCA</option>
+				<option>UPCE</option>
+			</options>
+		</help>
+	</validator>
+	
+	<validator class="Zend_Validate_Between">
+		<desc>La donnée testée doit être un nombre entre min et max. Inclusive est un booléen optionnel indiquant si min et max sont compris dans la limite acceptable.</desc>
+		
+		<codes>
+			<code>array('min' => 6, 'max' => 12)</code>
+			<code>array('min' => 6, 'max' => 12, 'inclusive' => true)</code>
+		</codes>
+	</validator>
+	
+	<validator class="Zend_Validate_Callback">
+		<desc>La donnée est testée par une fonction ou une méthode externe retournant un booléen.</desc>
+		
+		<codes>
+			<code>'functionName'</code>
+			<code>array($objectInstance, 'methodName')</code>
+			<code>array('className', 'staticMethodName')</code>			
+			<code>$objectInstanceWithInvokeMethod</code>
+			<code>array('callback' => array($objectInstance, 'methodName'), $optionVarOrArray)</code>			
+			<code>array('callback' => array('className', 'staticMethodName'), $optionVarOrArray)</code>
+		</codes>
+	</validator>
+	
+	<validator class="Zend_Validate_CreditCard">
+		<desc>La donnée testée doit correspondre à un numéro de carte de crédit au format valide.
+
+Il est possible d'appeler un service de validation de numéro de carte de crédit online en callback afin d'améliorer la vérification. Cette option ne sera pas proposée dans mon projet.
+		</desc>
+		
+		<codes>
+			<code></code>
+			<code>Zend_Validate_CreditCard::CONST</code>
+			<code>array(Zend_Validate_CreditCard::CONST, Zend_Validate_CreditCard::CONST)</code>
+			<code>array('type' => Zend_Validate_CreditCard::CONST)</code>
+			<code>array('type' => array(Zend_Validate_CreditCard::CONST, Zend_Validate_CreditCard::CONST))</code>
+		</codes>
+		
+		<help>
+			<options for="Zend_Validate_CreditCard::CONST">
+				<option>AMERICAN_EXPRESS</option>
+				<option>UNIONPAY</option>
+				<option>DINERS_CLUB</option>
+				<option>DINERS_CLUB_US</option>
+				<option>DISCOVER</option>
+				<option>JCB</option>
+				<option>LASER</option>
+				<option>MAESTRO</option>
+				<option>MASTERCARD</option>
+				<option>SOLO</option>
+				<option>VISA</option>
+			</options>
+		</help>
+	</validator>
+	
+	<validator class="Zend_Validate_Date">
+		<desc>La donnée testée doit correspondre à une date valide, correspondant à l'éventuel standard local et/ou au format donné.</desc>
+		
+		<codes>
+			<code></code>
+			<code>array('locale' => 'de')</code>
+			<code>array('format' => 'yyyy')</code>			
+			<code>array('locale' => 'de', 'format' => 'yyyy')</code>
+		</codes>
+	</validator>
+	
+	<validator class="Zend_Validate_Db_RecordExists">
+		<desc>La donnée testée doit être présente dans la table et le champ de la base de données. 
+Il est possible d'exclure certains enregistrements de la table.
+		</desc>
+		
+		<codes>
+			<code>array('table' => 'tableName', 'field' => 'fieldName')</code>
+			<code>array('table' => 'tableName', 'field' => 'fieldName', 'exclude' => array('field' => 'fieldName', 'value' => 'valueToExclude'))</code>
+			<code>array('table' => 'tableName', 'field' => 'fieldName', 'exclude' => 'where cloumn == "excludeMe"')</code>
+			<code>array('table' => 'tableName', 'field' => 'fieldName', 'schema' => 'schemaName')</code>
+			<code>array('table' => 'tableName', 'field' => 'fieldName', 'adapter' => $dbAdapter)</code>
+			<code>array('table' => 'tableName', 'field' => 'fieldName', 'schema' => 'schemaName', 'adapter' => $dbAdapter)</code>
+		</codes>
+	</validator>
+	
+	<validator class="Zend_Validate_Db_NoRecordExists">
+		<desc>La donnée testée ne doit pas être présente dans la table et le champ de la base de données. 
+Il est possible d'exclure certains enregistrements de la table.
+		</desc>
+		
+		<codes>
+			<code>array('table' => 'tableName', 'field' => 'fieldName')</code>
+			<code>array('table' => 'tableName', 'field' => 'fieldName', 'exclude' => array('field' => 'fieldName', 'value' => 'valueToExclude'))</code>
+			<code>array('table' => 'tableName', 'field' => 'fieldName', 'exclude' => 'where cloumn == "excludeMe"')</code>
+			<code>array('table' => 'tableName', 'field' => 'fieldName', 'schema' => 'schemaName')</code>
+			<code>array('table' => 'tableName', 'field' => 'fieldName', 'adapter' => $dbAdapter)</code>
+			<code>array('table' => 'tableName', 'field' => 'fieldName', 'schema' => 'schemaName', 'adapter' => $dbAdapter)</code>
+		</codes>
+	</validator>
+	
+	<validator class="Zend_Validate_Digit">
+		<desc>La donnée testée ne doit contenir que des chiffres</desc>
+		
+		<codes>
+			<code></code>
+		</codes>
+	</validator>
+	
+	<validator class="Zend_Validate_EmailAddress">
+		<desc>La donnée testée doit être une adresse email valide selon la norme RFC2822.</desc>
+		
+		<codes>
+			<code></code>
+			<code>$hostnameValidator</code>
+			<code>array('allow' => $hostnameValidator)</code>
+			<code>array('mx' => true)</code>
+			<code>array('deep' => true)</code>
+			<code>array('domain' => true)</code>
+		</codes>
+	</validator>
+	
+	<validator class="Zend_Validate_Float">
+		<desc>La donnée testée doit être un chiffre à virgule valide selon le format du pays.</desc>
+		
+		<codes>
+			<code></code>
+			<code>'localeName'</code>
+		</codes>
+	</validator>
+	
+	<validator class="Zend_Validate_GreaterThan">
+		<desc>La donnée testée doit être une valeur supérieure ou égale à min.</desc>
+		
+		<codes>
+			<code>37</code>
+		</codes>
+	</validator>
+	
+	<validator class="Zend_Validate_Hex">
+		<desc>La donnée testée doit être une chaine hexadécimale.</desc>
+		
+		<codes>
+			<code></code>
+		</codes>
+	</validator>
+	
+	<validator class="Zend_Validate_Hostname">
+		<desc>La donnée testée doit correspondre à un format de nom d'hôte valide.</desc>
+		
+		<codes>
+			<code>Zend_Validate_Hostname::CONST</code>
+			<code>array('allow' => Zend_Validate_Hostname::CONST)</code>
+			<code>array('idn' => true)</code>
+			<code>array('ip' => '10.134.168.37')</code>
+			<code>array('tld' => true)</code>
+		</codes>
+		
+		<help>
+			<options for="Zend_Validate_Hostname::CONST">
+				<option>ALLOW_DNS</option>
+				<option>ALLOW_IP</option>
+				<option>ALLOW_LOCALE</option>
+				<option>ALLOW_ALL</option>
+				<option>ALLOW_URI</option>
+			</options>
+		</help>
+	</validator>
+	
+	<validator class="Zend_Validate_Iban">
+		<desc>La donnée testée doit correspondre à un IBAN valide en dans le format du pays.
+Si locale est initialisé à false, la correspondance ne se fera pas en fonction du pays.
+		</desc>
+		
+		<codes>
+			<code></code>
+			<code>Array('locale' => false)</code>
+			<code>Array('locale' => 'de_AT')</code>
+		</codes>
+	</validator>
+	
+	<validator class="Zend_Validate_Identical">
+		<desc>La donnée testée doit correspondre en tout point à la valeur token.
+Une configuration peut être comparée, mais il faut alors spécifier un tableau avec une clé "token" pour effectuer la comparaison.
+		</desc>
+		
+		<codes>
+			<code>$identicalOriginValue</code>
+			<code>array('token' => $identicalOriginValue)</code>
+		</codes>
+	</validator>
+	
+	<validator class="Zend_Validate_InArray">
+		<desc>La donnée testée doit être présente dans le tableau haystack. Si celui-ci est multidimensionnel, il est possible de chercher récursivement en spécifiant le booléen récursive.
+Le booléen strict permettant une recherche en tenant compte du type des valeurs.
+		</desc>
+		
+		<codes>
+			<code>array('haystack' => $haystack)</code>
+			<code>array('haystack' => $haystack, 'recursive' => true)</code>
+			<code>array('haystack' => $haystack, 'strict' => true)</code>
+			<code>array('haystack' => $haystack, 'recursive' => true, 'strict' => true)</code>
+		</codes>
+	</validator>
+	
+	<validator class="Zend_Validate_Int">
+		<desc>La donnée testée doit être un nombre entier valide d'après le format du pays.</desc>
+		
+		<codes>
+			<code></code>
+			<code>array('locale' => 'de')</code>
+		</codes>
+	</validator>
+	
+	<validator class="Zend_Validate_Ip">
+		<desc>La donnée testée doit être une chaine contenant une ip valide au format ipv4 ou ipv6.</desc>
+		
+		<codes>
+			<code></code>
+			<code>array('allowipv4' => false)</code>
+			<code>array('allowipv6' => false)</code>
+			<code>array('allowipv4' => true, 'allowipv6' => false)</code>
+			<code>array('allowipv4' => false, 'allowipv6' => true)</code>
+			<code>array('allowipv4' => true, 'allowipv6' => true)</code>
+		</codes>
+	</validator>
+	
+	<validator class="Zend_Validate_Isbn">
+		<desc>La donnée testée doit être une valeur ISBN 10 ou 13 valide.</desc>
+		
+		<codes>
+			<code></code>
+			<code>array('separator' => '-')</code>
+			<code>array('type' => Zend_Validate_Isbn::CONST)</code>
+			<code>array('separator' => '-', 'type' => Zend_Validate_Isbn::CONST)</code>
+		</codes>
+		
+		<help>
+			<options for="Zend_Validate_Isbn::CONST">
+				<option>AUTO</option>
+				<option>ISBN10</option>
+				<option>ISBN13</option>
+			</options>
+		</help>
+	</validator>
+	
+	<validator class="Zend_Validate_LessThan">
+		<desc>La donnée testée doit être inférieur ou égale à max.</desc>
+		
+		<codes>
+			<code>37</code>
+		</codes>
+	</validator>
+	
+	<validator class="Zend_Validate_NotEmpty">
+		<desc>La donnée testée ne doit pas être vide. 
+La définition de "vide" peut-être modifié grâce au paramètre "type" fourni à la classe.
+		</desc>
+		
+		<codes>
+			<code></code>
+			<code>Zend_Validate_NotEmpty::CONST</code>
+			<code>array(Zend_Validate_NotEmpty::CONST, Zend_Validate_NotEmpty::CONST)</code>
+			<code>array('constShortname', 'constShotname')</code>
+		</codes>
+		
+		<help>
+			<options for="Zend_Validate_NotEmpty::CONST">
+				<option>BOOLEAN or 'boolean'</option>
+				<option>INTEGER or 'integer'</option>
+				<option>FLOAT or 'float'</option>
+				<option>STRING or 'string'</option>
+				<option>ZERO or 'zero'</option>
+				<option>EMPTY_ARRAY or 'array'</option>
+				<option>NULL or 'null'</option>
+				<option>PHP or 'php'</option>
+				<option>SPACE or 'space'</option>
+				<option>OBJECT or 'object'</option>
+				<option>OBJECT_STRING or 'objectstring'</option>
+				<option>OBJECT_COUNT or 'objectcount'</option>
+				<option>ALL or 'all'</option>
+			</options>
+		</help>
+	</validator>
+	
+	<validator class="Zend_Validate_PostCode">
+		<desc>La donnée testée doit être un code postal valide dans le pays passé en paramètre.</desc>
+		
+		<codes>
+			<code>'de'</code>
+			<code>$locale</code>
+			<code>array('locale' => 'fr_FR')</code>
+			<code>array('format' => 'FR-\d+')</code>
+			<code>array('locale' => 'fr_FR', 'format' => 'FR-\d+')</code>
+		</codes>
+	</validator>
+	
+	<validator class="Zend_Validate_Regex">
+		<desc>La donnée testée doit correspondre au masque de la regex.</desc>
+		
+		<codes>
+			<code>'pattern'</code>
+			<code>array('pattern' => 'pattern')</code>
+		</codes>
+	</validator>
+	
+	<validator class="Zend_Validate_Sitemap_Changefreq">
+		<desc>La donnée testée doit figurer dans la liste suivante :
+"always", "hourly", "daily", "weekly", "monthly", "yearly", "never"
+		</desc>
+		
+		<codes>
+			<code></code>
+		</codes>
+	</validator>
+	
+	<validator class="Zend_Validate_Sitemap_Lastmod">
+		<desc>La donne testée doit être une date valide sous la forme W3C.</desc>
+		
+		<codes>
+			<code></code>
+		</codes>
+	</validator>
+	
+	<validator class="Zend_Validate_Sitemap_Loc">
+		<desc>La donnée testée doit être une valeur valide pour un élément "loc" de sitemap.</desc>
+		
+		<codes>
+			<code></code>
+		</codes>
+	</validator>
+	
+	<validator class="Zend_Validate_Sitemap_Priority">
+		<desc>La donnée testée doit être un nombre (float ou string) compris entre 0 et 1.</desc>
+		
+		<codes>
+			<code></code>
+		</codes>
+	</validator>
+	
+	<validator class="Zend_Validate_StringLength">
+		<desc>La donnée testée doit être une chaine entre min et max caractères. Min vaut 0 par défaut, max vaut null.
+L'encodage de la chaine de caractère peut-être spécifié via la clé "encoding" du tableau.
+
+		</desc>
+		
+		<codes>
+			<code></code>
+			<code>array('min' => 6)</code>
+			<code>array('max' => 12)</code>
+			<code>array('min' => 6, 'max' => 12)</code>
+			<code>array('min' => 6, 'max' => 12, 'encoding' => 'UTF-8')</code>
+		</codes>
+	</validator>	
+</validators>

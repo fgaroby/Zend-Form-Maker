@@ -1,0 +1,322 @@
+<div id="mainTitle">Editing file : <span class="formFilename"><?php echo $this->formFilename; ?></span></div>
+<!-- Area with the element to add to the form -->
+
+<div id="showHideElementGroup">
+	<img src="/images/zfm/close.png" alt="->" title="show other" /><br/>
+    C<br/>
+    L<br/>
+    O<br/>
+    S<br/>
+    E
+</div>
+
+<div id="elementSidebar">
+	<h2>
+    	Form elements
+    	<span id="sideBarHelp" title="Drag and drop an element to the form or double click it. You can also right click on it.">
+    		<img src="/images/zfm/help.png" alt="Help !" />
+    	</span>
+	</h2>
+
+	<div class="spacer_v5"></div>
+	<div id="switchPart">
+    		<img src="/images/zfm/slideright.png" alt="->" title="show other" />
+	</div>
+	<div class="spacer_v15"></div>
+	
+    <div class="elements">
+    	<div class="spacer_h15 floater"></div>
+    	<div id="elementFirstPart">
+        	
+        	<div class="formElement type_text" title="Element type text"> 
+        		<div class="spacer_v15"></div>
+        		<input type="text" style="width: 50px;" value="text" />
+        	</div>
+        	
+        	<div class="formElement type_select" title="Element select"> 
+        		<div class="spacer_v15"></div>
+        		<select>
+        			<option>Select</option>
+        		</select>
+        	</div>
+        	    	
+        	<div class="formElement type_radio" title="Element radio button">
+        		<div class="spacer_v5"></div>
+        		<input type="radio" name="oui" value="as" /> Choice 1<br/>
+        		<input type="radio" name="oui" value="as" /> Choice 2
+        	</div>
+        	
+        	<div class="formElement type_checkbox" title="Element checkbox">
+        		<div class="spacer_v15"></div>
+        		<input type="checkbox" name="oui" value="as" /> Checkbox
+        	</div>
+    
+        	<div class="formElement type_password" title="Element type password"> 
+        		<div class="spacer_v15"></div>	
+        		<input type="password" style="width: 50px;" value="password" />
+        	</div>
+       		  
+        	<div class="formElement type_submit" title="Element submit"> 
+        		<div class="spacer_v15"></div>
+        		<input type="submit"value="Submit" />
+        	</div>
+        
+        	<div class="formElement type_hidden" title="Element type hidden"> 
+        		<div class="spacer_v15"></div>
+        		Hidden field
+        	</div> 	
+        	
+        	<div class="formElement type_textarea" title="Element textarea"> 
+        		<div class="spacer_v5"></div>
+        		<textarea></textarea>
+        		<div class="spacer_v5"></div>
+        	</div>  
+    
+    	</div>
+    	
+    	<div id="elementSecondPart">
+        
+        	<div class="formElement type_button" title="Element button"> 
+        		<div class="spacer_v15"></div>
+        		<input type="button" value="Button" />
+        	</div>
+        	
+        	<div class="formElement type_image" title="Element submit with image"> 
+        		<div class="spacer_v10"></div>
+        		<input type="image" src="/images/zfm/send.png" name="Submit"/>
+        	</div>	
+        	
+        	<div class="formElement type_file" title="Element browse/upload">
+        		<div class="spacer_v15"></div>
+        		<input type="button" value="Browse ..." />
+        	</div>   
+        	    
+        	<div class="formElement type_multicheckbox" title="Element multiple checkbox">
+        		<div class="spacer_v5"></div>
+        		<input type="checkbox" name="oui" value="as" /> Checkbox1<br/>
+        		<input type="checkbox" name="oui" value="as" /> Checkbox2<br/>
+        		<input type="checkbox" name="oui" value="as" /> Checkbox3<br/>
+        		<div class="spacer_v5"></div>
+        	</div>
+        	    	
+        	<div class="formElement type_multiselect" title="Element multiple select"> 
+        		<div class="spacer_v5"></div>
+        		<select multiple="multiple">
+        			<option selected="selected">Option 1</option>
+        			<option>Option 2</option>
+        			<option selected="selected">Option 3</option>
+        		</select>
+        		<div class="spacer_v5"></div>
+        	</div>	
+        	
+        	<div class="formElement type_captcha" title="Element captcha"> 
+        		<div class="spacer_v5"></div>
+        		<img src="/images/zfm/captcha.gif" alt="" title="" />
+        	</div>	
+    
+        	    	
+        	<div class="formElement type_hash" title="Element Hash against CSRF"> 
+        		<div class="spacer_v15"></div>
+        		Hash
+        	</div>		
+    	</div>
+  	    	
+    </div>	
+</div>
+
+
+<!-- This is the area where element will be dropped and sorted -->
+<fieldset id="formRenderArea">
+	<legend class="helper">
+    	Drop your element here 
+    	<span class="imgHelper" title="You can right click on an element to display the context menu.">
+    		<img src="/images/zfm/help.png" alt="help" />
+    	</span>
+	</legend>
+	
+	<div id="formRenderAreaContent"></div>	
+</fieldset>
+
+<div id="formMakerFooter">
+    <fieldset id="actions">
+    	<legend>Actions</legend>
+    	
+    	<div class="cell">
+        	<img src="/images/zfm/enableOrder.png" alt="lock" title="Enable order's modification" /> 
+        	<div class="cellRightPart">
+            	<div class="spacer_v10"></div>   	
+            	<div class="spacer_h10 floater"></div>
+            	<a href="#allowOrder" title="Order" id="toggleClassOrdering">
+            		Unlock order
+            	</a>
+        	</div>
+    	</div>
+    	
+    	<div class="spacer_h5 floater"></div>
+    	<div class="separator floater"></div>
+    	<div class="spacer_h5 floater"></div>
+    	
+    	<div class="cell">
+        	<img src="/images/zfm/formSettings.png" alt="settings" title="Display form settings" /> 
+        	<div class="cellRightPart">
+            	<div class="spacer_v10"></div>   	
+            	<div class="spacer_h10 floater"></div>
+            	<a href="#formSettingsLink" title="" id="formSettingsLink">
+            		Form settings
+            	</a>
+        	</div>
+    	</div>
+    	
+    	<div class="spacer_h5 floater"></div>
+    	<div class="separator floater"></div>
+    	<div class="spacer_h5 floater"></div>
+    	
+    	<div class="cell">
+        	<img src="/images/zfm/formPreview.png" alt="preview" title="Preview the form" /> 
+        	<div class="cellRightPart">
+            	<div class="spacer_v10"></div>   	
+            	<div class="spacer_h10 floater"></div>
+            	<a href="#preview" title="" id="previewForm">
+            		Preview
+            	</a>
+        	</div>
+    	</div>
+    	
+    	<div class="spacer_h5 floater"></div>
+    	<div class="separator floater"></div>
+    	<div class="spacer_h5 floater"></div>
+    	
+    	<div class="cell">
+        	<img src="/images/zfm/buildClass.png" alt="build" title="Build the class" /> 
+        	<div class="cellRightPart">
+            	<div class="spacer_v10"></div>   	
+        		<div class="spacer_h10 floater"></div>
+            	<a href="#buildClass" title="" id="buildClass">
+            		Build class
+            	</a>
+        	</div>
+    	</div>
+    	
+    	<div class="spacer_h5 floater"></div>
+    	<div class="separator floater"></div>
+    	<div class="spacer_h5 floater"></div>
+    	
+    	<div class="cell">
+        	<img src="/images/zfm/reload.png" alt="reload" title="Reload the form" /> 
+        	<div class="cellRightPart">
+            	<div class="spacer_v10"></div>   	
+        		<div class="spacer_h10 floater"></div>
+            	<a href="#reloadForm" title="" id="reloadForm">
+            		Reload
+            	</a>
+        	</div>
+    	</div>
+    	
+    	<div class="spacer_h5 floater"></div>
+    	<div class="separator floater"></div>
+    	<div class="spacer_h5 floater"></div>
+    	
+    	<div class="cell">
+        	<img src="/images/zfm/warning.png" alt="build" title="Show the warnings" id="buildInfosImage" /> 
+        	<div class="cellRightPart" style="display:block;">
+            	<div class="spacer_v10"></div>   	
+        		<div class="spacer_h10 floater"></div>
+            	<a href="#buildInfos" title="" id="buildInfos">
+            		Warnings (<span id="buildInfosCounter">0</span>)
+            	</a>
+        	</div>
+    	</div>
+    </fieldset>
+    
+    <!-- Element where you can drop sortable element to delete them -->	   
+    <fieldset id="trash">
+        	<legend>Trash</legend>
+    </fieldset>
+</div>
+
+
+<!--  Things from here are hidden -->
+
+<?php 
+echo $this->partial('index/edit-element-dialog.phtml', 
+                    array(
+                        'generalForm' => $this->generalForm,
+                        'validatorInputsForm' => $this->validatorInputsForm,
+                        'validatorsList' => $this->validatorsList,
+                        'filtersList' => $this->filtersList,
+                        'filtersInputsForm' => $this->filtersInputsForm,
+                        'multiOptionsForm' => $this->multiOptionsForm
+                         )); 
+
+?>
+
+<div id="formSettings">
+	<h1>Form settings</h1>
+	<div id="attributesArea">
+		<div id="elementAttributes">
+			<div id="attribDefaultLine">
+    			<div class="attrib"> 
+    			
+    				<div class="actionsArea">
+        				<img src="/images/zfm/attribDelete.png" alt="delete" title="delete" class="attribDelete" />
+    				</div>
+    				               	
+    				<div class="spacer_h15 floater"></div>
+    						
+    				<div class="datasArea">
+    					<span class="attName">Id</span>="<span class="attValue">mySuperId</span>"
+    				</div>
+    				<div class="cleaner"></div>
+    			</div>
+    			<div class="spacer_v10"></div>
+			</div>
+		</div>
+		
+		<div class="spacer_h15 floater"></div>
+		
+		<div id="attributEditLine">
+			<div class="element">
+				<label for="attribName">Name :</label><br/>
+				<input type="text" id="attribName" value="" /> 
+			</div>
+			
+			<div class="spacer_v15"></div>
+			
+			<div class="element">
+				<label for="attribValue">Value :</label><br/>
+				<input type="text" id="attribValue" value="" /> 
+			</div>
+			
+			<div class="spacer_v15"></div>
+			
+			<div class="element elementSubmit">
+				<input type="submit" id="addAttributeButton" name="addAttribute" value="Ok" />
+			</div>
+		</div>
+	</div>
+</div>
+
+<ul id="formElementEditMenu" class="contextMenu">
+    <li class="edit">
+        <a href="#edit">Edit</a>
+    </li>
+    <li class="delete">
+        <a href="#delete">Delete</a>
+    </li>
+    <li class="quit separator">
+        <a href="#quit">Quit</a>
+    </li>
+</ul>
+
+<ul id="formElementAddMenu" class="contextMenu">
+    <li class="edit">
+        <a href="#add">Add</a>
+    </li>
+</ul>
+
+<div id="buildInfosDialog" title="What happened in my form ?">
+</div>
+
+
+<div id="previewFormDialog" title="Let's have a look !">
+</div>

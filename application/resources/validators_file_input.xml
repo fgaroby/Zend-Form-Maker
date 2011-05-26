@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<validators>
+	<link>http://framework.zend.com/manual/1.11/en/zend.file.transfer.validators.html#zend.file.transfer.validators.{class_shortname}</link>
+	
+	<validator class="Zend_Validate_File_Count">
+		<desc>L'élément de formulaire implémentant cet élément doit envoyer entre "min" et "max" fichiers.</desc>
+		
+		<codes>
+			<code>12</code>
+			<code>array('min' => 1, 'max' => 3)</code>
+		</codes>
+	</validator>
+	
+	<validator class="Zend_Validate_File_Crc32">
+		<desc>Le hachage du contenu du fichier envoyé doit correspondre à celui ou ceux fourni à ce validateur en utilisant l’extension de hachage PHP crc32.</desc>
+		
+		<codes>
+			<code>'hash'</code>
+			<code>array('hash', 'hash2', 'hash3')</code>
+		</codes>
+	</validator>
+	
+	<validator class="Zend_Validate_File_ExcludeExtension">
+		<desc>Le fichier envoyé ne doit pas posséder une des extensions spécifiée par ce validateur.
+
+La clé "case" permet de spécifier optionnellement si la vérification d’extension est sensible à la casse.
+		</desc>
+		
+		<codes>
+			<code>'exe'</code>
+			<code>array('exe', 'php')</code>
+			<code>array('exe', 'php', 'case' => true)</code>
+		</codes>
+	</validator>
+	
+	<validator class="Zend_Validate_File_ExcludeMimeType">
+		<desc>Le fichier envoyé doit avoir un type MIME n’étant pas spécifié par ce validateur.
+
+La clé "headeCheck" du tableau permet de vérifier le type MIME dans l’entête HTTP si les extensions fileInfo et mimeMagic ne sont pas présentent.
+		</desc>
+		
+		<codes>
+			<code>'image/gif'</code>
+			<code>array('image/gif', 'image/jpeg')</code>
+			<code>array('image/gif', 'image/jpeg', 'headerCheck' => true)</code>
+		</codes>
+	</validator>
+	
+	<validator class="Zend_Validate_File_Exists">
+		<desc>Le fichier envoyé doit exister dans un des chemins passés en paramètre.</desc>
+		
+		<codes>
+			<code>'/upload/'</code>
+			<code>array('/upload/', '/upload/image/')</code>
+		</codes>
+	</validator>
+	
+	<validator class="Zend_Validate_File_Extension">
+		<desc>Le fichier envoyé doit posséder une des extensions spécifiée par ce validateur.
+
+La clé "case" permet de spécifier optionnellement si la vérification d’extension est sensible à la casse.
+		</desc>
+		
+		<codes>
+			<code>'exe'</code>
+			<code>array('exe', 'php')</code>
+			<code>array('exe', 'php', 'case' => true)</code>
+		</codes>
+	</validator>
+	
+	<validator class="Zend_Validate_File_FilesSize">
+		<desc>Le poids total des fichiers envoyés doit être supérieur à min (si spécifié) et inférieur à max.  Les valeurs fournies peuvent être des nombre ou des chaînes représentant un taille en notation SI.
+
+Le booléen associé à la clé "bytestring" spécifie si l’erreur retourne une taille en octet ou si celle-ci est convertie pour une lecture humaine plus aisée.
+		</desc>
+		
+		<codes>
+			<code>2048</code>
+			<code>array('min' => 768)</code>
+			<code>array('max' => 2048)</code>
+			<code>array('min' => 768, 'max' => 2048)</code>
+			<code>array('min' => 768, 'max' => 2048, 'bytestring' => false)</code>
+			<code>array('min' => '10kb', 'max' => '2mb')</code>
+		</codes>
+	</validator>
+	
+	<validator class="Zend_Validate_File_ImageSize">
+		<desc>Le fichier envoyé doit être une image ayant des dimensions comprises dans les limites établies par les paramètres.</desc>
+		
+		<codes>
+			<code>array('minwidth' => 50)</code>
+			<code>array('maxwidth' => 200)</code>
+			<code>array('minheight' => 50)</code>
+			<code>array('maxheight' => 200)</code>
+			<code>array('minwidth' => 50, 'minheight' => 50)</code>
+			<code>array('maxwidth' => 200, 'maxheight' => 200)</code>
+			<code>array('minwidth' => 50, 'maxwidth' => 200, 'minheight' => 50, 'maxheight' => 200)</code>
+		</codes>
+	</validator>
+	
+	<validator class="Zend_Validate_File_IsCompressed">
+		<desc>Le fichier envoyé doit être une archive compressée comme le zip, le rar, etc …
+
+La clé "headeCheck" du tableau permet de vérifier le type MIME dans l’entête HTTP si les extensions fileInfo et mimeMagic ne sont pas présentent.
+		</desc>
+		
+		<codes>
+			<code></code>
+			<code>'zip'</code>
+			<code>array('zip')</code>
+			<code>array('application/zip', 'headerCheck' => true)</code>
+		</codes>
+	</validator>
+	
+	<validator class="Zend_Validate_File_IsImage">
+		<desc>Le fichier envoyé doit être une image dont le type est spécifié par ce validateur.
+
+La clé "headeCheck" du tableau permet de vérifier le type MIME dans l’entête HTTP si les extensions fileInfo et mimeMagic ne sont pas présentent.
+		</desc>
+		
+		<codes>
+			<code></code>
+			<code>'jpeg'</code>
+			<code>array('jpeg')</code>
+			<code>array('application/gif', 'headerCheck' => true)</code>
+		</codes>
+	</validator>
+	
+	<validator class="Zend_Validate_File_Hash">
+		<desc>Le contenu du fichier envoyé est vérifié en le hachant puis en le comparant au hachage fourni.
+
+L’algorithme de hachage peut être spécifié via la clé "algorithm" dans la notation du second constructeur.
+		</desc>
+		
+		<codes>
+			<code>'3b3652f'</code>
+			<code>array('3b3652f', 'e612b69')</code>
+			<code>array('315b3cd8273d44912a7', 'algorithm' => 'md5')</code>
+		</codes>
+	</validator>
+	
+	<validator class="Zend_Validate_File_Md5">
+		<desc>Le contenu du fichier envoyé est vérifié en le hachant grâce à l’algorithme md5 puis en le comparant au hachage fourni.</desc>
+		
+		<codes>
+			<code>'3b3652f336522365223'</code>
+			<code>array('3b3652f336522365223', 'eb3365f3365ddc65365')</code>
+		</codes>
+	</validator>
+	
+	<validator class="Zend_Validate_File_MimeType">
+		<desc>Le fichier envoyé doit avoir un type MIME étant spécifié par ce validateur.
+
+La clé "headeCheck" du tableau permet de vérifier le type MIME dans l’entête HTTP si les extensions fileInfo et mimeMagic ne sont pas présentent.
+
+Le second paramètre optionnel du second constructeur permet de spécifié le chemin vers le fichier magicfile à utiliser.
+		</desc>
+		
+		<codes>
+			<code>image/gif'</code>
+			<code>array('image/gif', 'image/jpeg')</code>
+			<code>array('image/gif', 'image/jpeg', 'headerCheck' => true)</code>
+			<code>array('image/', 'headerCheck' => true)</code>
+			<code>array('image/gif', 'image/jpeg', 'magicfile' => 'path/to/magicfile.mgx')</code>
+		</codes>
+	</validator>
+	
+	<validator class="Zend_Validate_File_NotExists">
+		<desc>Le fichier envoyé ne doit pas exister dans un des chemins passés en paramètre.</desc>
+		
+		<codes>
+			<code>'/upload/'</code>
+			<code>array('/upload/', '/upload/image/')</code>
+		</codes>
+	</validator>
+	
+	<validator class="Zend_Validate_File_Sha1">
+		<desc>Le contenu du fichier envoyé est vérifié en le hachant grâce à l’algorithme sha1 puis en le comparant au hachage fourni.</desc>
+		
+		<codes>
+			<code>'3b3652f336522365223'</code>
+			<code>array('3b3652f336522365223', 'eb3365f3365ddc65365')</code>
+		</codes>
+	</validator>
+	
+	<validator class="Zend_Validate_File_Size">
+		<desc>Le poids du fichier envoyé doit être supérieur à min (si spécifié) et inférieur à max.  Les valeurs fournies peuvent être des nombre ou des chaînes représentant un taille en notation SI.
+
+Le booléen associé à la clé "bytestring" spécifie si l’erreur retourne une taille en octet ou si celle-ci est convertie pour une lecture humaine plus aisée.
+		</desc>
+		
+		<codes>
+			<code>2048</code>
+			<code>array('min' => 768)</code>
+			<code>array('max' => 2048)</code>
+			<code>array('min' => 768, 'max' => 2048)</code>
+			<code>array('min' => 768, 'max' => 2048, 'bytestring' => false)</code>
+			<code>array('min' => '10kb', 'max' => '2mb')</code>
+		</codes>
+	</validator>
+	
+	<validator class="Zend_Validate_File_WordCount">
+		<desc>Le fichier envoyé doit contenir entre min et max mots.
+		</desc>
+		
+		<codes>
+			<code>250</code>
+			<code>array('min' => 100, 'max' => 250)</code>
+		</codes>
+	</validator>
+</validators>
