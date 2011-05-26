@@ -86,7 +86,7 @@ class IndexController extends Zend_Controller_Action
         $fileList = array();
         foreach($xmlFiles as $xmlFile)
         {
-            if (!in_array($xmlFile, array('.', '..')))
+            if (!in_array($xmlFile, array('.', '..')) && (strpos($xmlFile, '.xml') !== false))
             {
                 $tmpList['path'] = '/' . $xmlFilesPath . $xmlFile;
                 $tmpList['filename'] = basename($xmlFile);
