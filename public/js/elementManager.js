@@ -165,7 +165,7 @@ $(document).ready(function()
 
                 var elementName = $.ElementManager.getElementName(el);
                 
-                if (confirm("You're gonna delete the element named '" + elementName + "'. Are you sure ? "))
+                if (confirm("You're about to delete the element named '" + elementName + "'. Are you sure ? "))
                     $.ajaxCalls.deleteElement(param, el);
             },
             
