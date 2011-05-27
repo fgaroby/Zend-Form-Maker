@@ -1,0 +1,28 @@
+First of all, copy the configuration into your httpd.conf file, or the vhost file associated.
+Don't forget to replace the path to your project's public directory. 
+Take care to keep the / at the end of the DocumentRoot line and remove it at the end the for <Directory> line.
+
+###### Start copy here
+<VirtualHost *:80>
+    ServerName zfm
+    DocumentRoot /path/to/your/project/public/
+ 
+    SetEnv APPLICATION_ENV "production"
+ 
+    <Directory /path/to/your/project/public>
+        DirectoryIndex index.php
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
+##### Stop copy here
+
+Restart your webserver.
+
+Then go to your hosts file the one for your OS,
+- on windows it's in probably in "/Windows/System32/drivers/etc/hosts", 
+- on unix it's in probably in "/etc/hosts"
+
+Edit it with your favorite text editor and add the following line :
+127.0.0.1     zfm

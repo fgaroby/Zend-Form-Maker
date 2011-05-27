@@ -18,7 +18,8 @@ You should have receive with this file :
 - an "application" directory
 - a "public" directory.
 
-Copy all these files in your server's root or a subdirectory.
+Copy all these files in your server's root. 
+I suggest you to create a vhost for your projet called "zfm", if you don't know how, please read the "doc/vhost_howto.txt" file.
 Redirect every access to the directory into the public subdirectory, don't forget to enable url rewriting on your apache server as for every Zend Framework Projet.
 
 
@@ -26,7 +27,9 @@ Redirect every access to the directory into the public subdirectory, don't forge
 #########################################################################
 Configuration and how to guide :
 
-In the directory "application/configs", there is an application.ini file. Some configuration keys are there with the zfm prefix. You can change some settings there but it's more advised to know what you do before you do it.
+In the directory "application/configs", there is an application.ini file. 
+Some configuration keys are there with the zfm prefix.
+You can change some settings there but it's more advised to know what you do before you do it.
 
 Don't forget to correct the path to your Zend Framework library.
 

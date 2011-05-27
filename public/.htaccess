@@ -1,3 +1,12 @@
+# OVH
+# ===================================
+SetEnv PHP_VER 5_TEST
+
+SetEnv REGISTER_GLOBALS 0
+SetEnv MAGIC_QUOTES 0
+
+
+
 # Zend Framework
 # ===================================
 SetEnv APPLICATION_ENV production
