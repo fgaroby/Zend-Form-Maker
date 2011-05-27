@@ -25,10 +25,6 @@ class IndexController extends Zend_Controller_Action
     public function init()
     {
         $view = $this->view;
-        
-        // Enable jquery for this controller
-        $view->addHelperPath('ZendX/JQuery/View/Helper/', 'ZendX_JQuery_View_Helper');
-        $view->jQuery()->uiEnable();
     }
 
     public function indexAction()
