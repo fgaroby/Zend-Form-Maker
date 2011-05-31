@@ -35,41 +35,27 @@ h2 {
 
 /* TOP PANEL */
 #topPan {
-	width: 700px;
-	height: 252px;
-	position: relative;
+	width: 340px;
+	height: 50px;
 	margin: 0 auto;
 	padding: 0;
 }
 
-#topPan h1,
-#topPan h2 {
-	text-align: center;
-	color: #CF586B;
-	font-weight: normal;
-	margin-bottom: 5px;
-	padding: 2px;
+#ban
+{
+	width: 800px;
+	height: 200px;
+	background: url(../images/design/ban.png);	
+	margin: auto;
 }
 
-#topPan h1 {
-	font-size: 40px;
-	position: absolute;
-	top: 70px;
-}
-
-#topPan h2 {
-	font-size: 20px;
-	position: absolute;
-	top: 110px;
-}
 
 #topPan ul {
-	width: 511px;
+	width: 340px;
 	height: 32px;
 	display: block;
 	position: absolute;
 	top: 215px;
-	left: 0px;
 	margin: 0px;
 	padding: 0px;
 	background: url(../images/design/menu-bg.gif) 0 0 repeat-x #FF8714;
@@ -107,7 +93,7 @@ h2 {
 
 #topPan ul li.contact {
 	display: block;
-	width: 75px;
+	width: 73px;
 	height: 32px;
 	background: url(images/menu-bg.gif) 0 0 repeat-x #FF8714;
 	color: #fff;
@@ -119,7 +105,7 @@ h2 {
 
 #topPan ul li.contact:hover {
 	display: block;
-	width: 75px;
+	width: 73px;
 	background: url(images/menu-hover.gif) 50% 0 no-repeat;
 	text-decoration: none;
 	margin: 0;
