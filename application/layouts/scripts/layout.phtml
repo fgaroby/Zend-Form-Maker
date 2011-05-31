@@ -27,12 +27,11 @@ echo $this->doctype();
 	</div>
 </noscript>
 
+<div id="ban"></div>
 <div id="topPan">
-    <h1>Zend Form Maker v1.0</h1>
-    <h2>ZFM : It has never been so easy to create your form</h2>
     <ul>
     	<li class="active">
-    		<a href="/Index/index">Home</a>
+    		<a href="<?php echo $this->url(array('controller' => 'Index', 'action' => 'index')); ?>">Home</a>
     	</li>
     
     	<li>
