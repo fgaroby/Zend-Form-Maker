@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <filters>
-	<link></link>
+	<link>http://framework.zend.com/manual/fr/zend.filter.set.html#zend.filter.set.{class_shortname}</link>
 	
 	<filter class="Zend_Filter_Alnum">
 		<desc>La donnée filtrée verra ses caractères non alphanumériques supprimés.</desc>

@@ -200,7 +200,10 @@ $(document).ready(function()
                 $.TabValidators.fillHelpDialog(data);
                 
                 // Fill the field with the datas
-                $("#validatorsArea #description #className").text(knownDatas.name);
+                $("#validatorsArea #description #className")
+                .prop("href", data.link)
+                .text(knownDatas.name);
+                
                 $("#validatorsArea #validatorConstruct").val(knownDatas.constructor);
                 $("#validatorsArea #validatorMsgError").val(knownDatas.errorMessage);
                 $("#validatorsArea #validatorBCOF").prop("checked", (knownDatas.bcof != "false"));

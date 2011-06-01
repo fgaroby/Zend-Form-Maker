@@ -2,7 +2,7 @@
 <!-- Area with the element to add to the form -->
 
 <div id="showHideElementGroup">
-	<img src="/images/zfm/close.png" alt="->" title="show other" /><br/>
+	<img src="<?php echo $this->baseUrl(); ?>/images/zfm/close.png" alt="->" title="show other" /><br/>
     C<br/>
     L<br/>
     O<br/>
@@ -14,13 +14,13 @@
 	<h2>
     	Form elements
     	<span id="sideBarHelp" title="Drag and drop an element to the form or double click it. You can also right click on it.">
-    		<img src="/images/zfm/help.png" alt="Help !" />
+    		<img src="<?php echo $this->baseUrl(); ?>/images/zfm/help.png" alt="Help !" />
     	</span>
 	</h2>
 
 	<div class="spacer_v5"></div>
 	<div id="switchPart">
-    		<img src="/images/zfm/slideright.png" alt="->" title="show other" />
+    		<img src="<?php echo $this->baseUrl(); ?>/images/zfm/slideright.png" alt="->" title="show other" />
 	</div>
 	<div class="spacer_v15"></div>
 	
@@ -83,7 +83,7 @@
         	
         	<div class="formElement type_image" title="Element submit with image"> 
         		<div class="spacer_v10"></div>
-        		<input type="image" src="/images/zfm/send.png" name="Submit"/>
+        		<input type="image" src="<?php echo $this->baseUrl(); ?>/images/zfm/send.png" name="Submit"/>
         	</div>	
         	
         	<div class="formElement type_file" title="Element browse/upload">
@@ -111,7 +111,7 @@
         	
         	<div class="formElement type_captcha" title="Element captcha"> 
         		<div class="spacer_v5"></div>
-        		<img src="/images/zfm/captcha.gif" alt="" title="" />
+        		<img src="<?php echo $this->baseUrl(); ?>/images/zfm/captcha.gif" alt="" title="" />
         	</div>	
     
         	    	
@@ -130,7 +130,7 @@
 	<legend class="helper">
     	Drop your element here 
     	<span class="imgHelper" title="You can right click on an element to display the context menu.">
-    		<img src="/images/zfm/help.png" alt="help" />
+    		<img src="<?php echo $this->baseUrl(); ?>/images/zfm/help.png" alt="help" />
     	</span>
 	</legend>
 	
@@ -142,7 +142,7 @@
     	<legend>Actions</legend>
     	
     	<div class="cell">
-        	<img src="/images/zfm/enableOrder.png" alt="lock" title="Enable order's modification" /> 
+        	<img src="<?php echo $this->baseUrl(); ?>/images/zfm/enableOrder.png" alt="lock" title="Enable order's modification" /> 
         	<div class="cellRightPart">
             	<div class="spacer_v10"></div>   	
             	<div class="spacer_h10 floater"></div>
@@ -157,7 +157,7 @@
     	<div class="spacer_h5 floater"></div>
     	
     	<div class="cell">
-        	<img src="/images/zfm/formSettings.png" alt="settings" title="Display form settings" /> 
+        	<img src="<?php echo $this->baseUrl(); ?>/images/zfm/formSettings.png" alt="settings" title="Display form settings" /> 
         	<div class="cellRightPart">
             	<div class="spacer_v10"></div>   	
             	<div class="spacer_h10 floater"></div>
@@ -172,7 +172,7 @@
     	<div class="spacer_h5 floater"></div>
     	
     	<div class="cell">
-        	<img src="/images/zfm/formPreview.png" alt="preview" title="Preview the form" /> 
+        	<img src="<?php echo $this->baseUrl(); ?>/images/zfm/formPreview.png" alt="preview" title="Preview the form" /> 
         	<div class="cellRightPart">
             	<div class="spacer_v10"></div>   	
             	<div class="spacer_h10 floater"></div>
@@ -187,7 +187,7 @@
     	<div class="spacer_h5 floater"></div>
     	
     	<div class="cell">
-        	<img src="/images/zfm/buildClass.png" alt="build" title="Build the class" /> 
+        	<img src="<?php echo $this->baseUrl(); ?>/images/zfm/buildClass.png" alt="build" title="Build the class" /> 
         	<div class="cellRightPart">
             	<div class="spacer_v10"></div>   	
         		<div class="spacer_h10 floater"></div>
@@ -202,7 +202,7 @@
     	<div class="spacer_h5 floater"></div>
     	
     	<div class="cell">
-        	<img src="/images/zfm/reload.png" alt="reload" title="Reload the form" /> 
+        	<img src="<?php echo $this->baseUrl(); ?>/images/zfm/reload.png" alt="reload" title="Reload the form" /> 
         	<div class="cellRightPart">
             	<div class="spacer_v10"></div>   	
         		<div class="spacer_h10 floater"></div>
@@ -217,7 +217,7 @@
     	<div class="spacer_h5 floater"></div>
     	
     	<div class="cell">
-        	<img src="/images/zfm/warning.png" alt="build" title="Show the warnings" id="buildInfosImage" /> 
+        	<img src="<?php echo $this->baseUrl(); ?>/images/zfm/warning.png" alt="build" title="Show the warnings" id="buildInfosImage" /> 
         	<div class="cellRightPart" style="display:block;">
             	<div class="spacer_v10"></div>   	
         		<div class="spacer_h10 floater"></div>
@@ -258,7 +258,7 @@ echo $this->partial('index/edit-element-dialog.phtml',
     			<div class="attrib"> 
     			
     				<div class="actionsArea">
-        				<img src="/images/zfm/attribDelete.png" alt="delete" title="delete" class="attribDelete" />
+        				<img src="<?php echo $this->baseUrl(); ?>/images/zfm/attribDelete.png" alt="delete" title="delete" class="attribDelete" />
     				</div>
     				               	
     				<div class="spacer_h15 floater"></div>

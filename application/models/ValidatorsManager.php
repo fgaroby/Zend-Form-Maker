@@ -83,12 +83,14 @@ class Application_Model_ValidatorsManager
      */
     public function getElementInJson($name)
     {
+        $shortName = strtolower(substr(strrchr($name, '_'), 1));
         $sxe = new SimpleXMLElement($this->_xmlFileContent);
         $validator = $sxe->xpath('//' . $this->_tags[$this->_typeFile][1] . '[@class="' . $name . '"]');
         if (count($validator) == 1)
         {
             $validator = $validator[0];
             $validator->description = nl2br($validator->description);
+            $validator->addChild('link', str_replace('{class_shortname}', $shortName, $sxe->link));
             $json = Zend_Json::encode($validator);
             
             return $json;

@@ -33,7 +33,8 @@ class Application_Form_TabValidators extends Zend_Form
 							  )
 					    );
 
-		$this->_imgDone = '<img src="/images/zfm/updateDone.png" alt="The field is up to date" title="The field is up to date" />';
+        $baseUrl = Zend_Controller_Front::getInstance()->getBaseUrl();      
+		$this->_imgDone = '<img src="' . $baseUrl . '/images/zfm/updateDone.png" alt="The field is up to date" title="The field is up to date" />';
 					    
 					    
         $this->_paramInput();

@@ -77,14 +77,14 @@ $(document).ready(function()
 
         $.ZFM.images =
         {    
-            fieldUpToDate : '<img src="/images/zfm/updateDone.png" title="update done" alt="update done" />',
-            filedUpdateInProgress : '<img src="/images/zfm/updateProcessing.gif" title="update in progress" alt="update in progress" />',
+            fieldUpToDate : '<img src="' + site.baseUrl + '/images/zfm/updateDone.png" title="update done" alt="update done" />',
+            filedUpdateInProgress : '<img src="' + site.baseUrl + '/images/zfm/updateProcessing.gif" title="update in progress" alt="update in progress" />',
             
-            nextElements : '<img src="/images/zfm/slideright.png" alt="Next" title="Next elements" />',
-            previousElements : '<img src="/images/zfm/slideleft.png" alt="Previous" title="Previous elements" />',
+            nextElements : '<img src="' + site.baseUrl + '/images/zfm/slideright.png" alt="Next" title="Next elements" />',
+            previousElements : '<img src="' + site.baseUrl + '/images/zfm/slideleft.png" alt="Previous" title="Previous elements" />',
             
-            openEye: '<img src="/images/zfm/open.png" title="Open sidebar" alt="eye" />',
-            closeCross : '<img src="/images/zfm/close.png" title="Close sidebar" alt="cross" />'
+            openEye: '<img src="' + site.baseUrl + '/images/zfm/open.png" title="Open sidebar" alt="eye" />',
+            closeCross : '<img src="' + site.baseUrl + '/images/zfm/close.png" title="Close sidebar" alt="cross" />'
         };
             
         $.ZFM.contextMenu =

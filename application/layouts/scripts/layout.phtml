@@ -70,7 +70,17 @@ echo $this->doctype();
 <div id="dialogConfirmation"></div>
 
     
-<?php echo $this->headScript(); ?>
+    
+
+<?php $this->headScript()->captureStart(); ?>
+site = {
+    baseUrl: "<?php echo $this->baseUrl() ?>"
+};
+<?php 
+$this->headScript()->captureEnd();
+
+echo $this->headScript(); 
+?>
 
 </body>
 </html>

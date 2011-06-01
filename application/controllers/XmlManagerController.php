@@ -334,14 +334,13 @@ class XmlManagerController extends Zend_Controller_Action
             $formFilename = $this->getRequest()->getPost('formFilename');
             $id = $this->getRequest()->getPost('id');
             $name = $this->getRequest()->getPost('name');
-            
             if (!empty($id) && !empty($name))
             {
                 try
-                {                    
-                    $xmlMng = new Application_Model_XmlManager($formFilename);
+                {              
+                    $xmlMng = new Application_Model_XmlManager($formFilename);  
                     $result = $xmlMng->deleteValidator($id, $name);
-
+                    
                     if ($result != false)
                         echo $result;
                     else

@@ -76,13 +76,13 @@
         	<td class="actions">        	
         		<form action="<?php echo $urlDelete; ?>" method="post">
         			<input type="hidden" name="formFilename" value="<?php echo $fileDatas['realname']; ?>" />
-        			<input type="image" name="sendDeleteForm" id="sendDeleteForm" value="Delete it !" src="/images/zfm/delete.png" />
+        			<input type="image" name="sendDeleteForm" id="sendDeleteForm" value="Delete it !" src="<?php echo $this->baseUrl(); ?>/images/zfm/delete.png" />
     			</form>
     			
     			<div class="spacer_h5 floater"></div>
     			
     			<a href="<?php echo $urlRename; ?>" title="Rename" > 
-    				<img src="/images/zfm/rename32.png" alt="Rename the form" /> 
+    				<img src="<?php echo $this->baseUrl(); ?>/images/zfm/rename32.png" alt="Rename the form" /> 
     			</a>
     			
     			<div class="spacer_h10 floater"></div>
@@ -97,12 +97,12 @@
 		    </td>
 		    
     		<td class="cell showFile">
-    			<a href="<?php echo $fileDatas['path']; ?>" title=""><img src="/images/zfm/xml.png" title="See the xml file" alt="show" /></a>
+    			<a href="<?php echo $fileDatas['path']; ?>" title=""><img src="<?php echo $this->baseUrl(); ?>/images/zfm/xml.png" title="See the xml file" alt="show" /></a>
     		</td>
     		
     		<td class="cell">    		
     		    <?php if ($formMade) : ?>
-    				<a href="<?php echo $urlTest; ?>" title=""><img src="/images/zfm/test.png" title="Test your form" alt="Test it !" /></a>
+    				<a href="<?php echo $urlTest; ?>" title=""><img src="<?php echo $this->baseUrl(); ?>/images/zfm/test.png" title="Test your form" alt="Test it !" /></a>
     		    <?php endif ; ?>
     		</td>
         </tr>

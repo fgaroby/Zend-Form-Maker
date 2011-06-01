@@ -24,7 +24,8 @@ class IndexController extends Zend_Controller_Action
     
     public function init()
     {
-        $view = $this->view;
+        $baseUrl = Zend_Controller_Front::getInstance()->getBaseUrl();      
+        $this->_jsDir = $baseUrl . $this->_jsDir;
     }
 
     public function indexAction()
@@ -43,8 +44,11 @@ class IndexController extends Zend_Controller_Action
     }
 
     public function formListAction()
-    {        
-        $this->view->headLink()->appendStylesheet('/css/formList.css');  
+    {          
+        $baseUrl = Zend_Controller_Front::getInstance()->getBaseUrl();      
+        $this->view->headLink()->appendStylesheet($baseUrl . '/css/formList.css');  
+        
+        
         $this->view->headScript()->appendFile($this->_jsDir . 'formList.js');
         $this->view->formFilename = 'form_name';  
         
@@ -133,12 +137,13 @@ class IndexController extends Zend_Controller_Action
         $formDir =  $config->zfm->formDir;
         $customCssDir = $config->zfm->customCssDir;
         
+        $baseUrl = Zend_Controller_Front::getInstance()->getBaseUrl();      
         // Include the user's css for the test part
         $customCssFiles = glob($customCssDir . '*.css');
         foreach($customCssFiles as $file)
         {
             $file = substr($file, 1); // Remove the first dot in the filepath
-            $this->view->headLink()->appendStylesheet($file);	
+            $this->view->headLink()->appendStylesheet($baseUrl . $file);	
         }
         
         
@@ -186,6 +191,7 @@ class IndexController extends Zend_Controller_Action
      */
     public function formMakerAction()
     {
+        $baseUrl = Zend_Controller_Front::getInstance()->getBaseUrl();      
         $view = $this->view;
         
         // System main javascript files
@@ -205,8 +211,8 @@ class IndexController extends Zend_Controller_Action
     	$view->headScript()->appendFile($this->_jsDir . 'editElementTabDecorators.js');   	
     		        
         // My css
-        $view->headLink()->appendStylesheet('/css/formMaker.css');  
-        $view->headLink()->appendStylesheet('/css/formMakerDialogs.css');          
+        $view->headLink()->appendStylesheet($baseUrl . '/css/formMaker.css');  
+        $view->headLink()->appendStylesheet($baseUrl .'/css/formMakerDialogs.css');          
         
         // Jquery libraries
         $view->headScript()->appendFile($this->_jsDir . 'jquery.contextMenu.js');		
@@ -215,9 +221,9 @@ class IndexController extends Zend_Controller_Action
         $view->headScript()->appendFile($this->_jsDir . 'jquery.tooltip.js');	 
         
         // Jquery librairies CSS
-		$view->headLink()->appendStylesheet('/css/jquery.contextMenu.css');	
-        $view->headLink()->appendStylesheet('/css/jquery.toastmessage.css'); 
-        $view->headLink()->appendStylesheet('/css/jquery.tooltip.css'); 
+		$view->headLink()->appendStylesheet($baseUrl .'/css/jquery.contextMenu.css');	
+        $view->headLink()->appendStylesheet($baseUrl .'/css/jquery.toastmessage.css'); 
+        $view->headLink()->appendStylesheet($baseUrl .'/css/jquery.tooltip.css'); 
         
         
         

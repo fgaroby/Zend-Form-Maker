@@ -189,7 +189,9 @@ $(document).ready(function()
                 $.TabFilters.fillHelpDialog(data);
                 
                 // Fill the field with the datas
-                $("#filtersArea #description #className").text(knownDatas.name);
+                $("#filtersArea #description #className")
+                .prop("href", data.link)
+                .text(knownDatas.name);
                 $("#filtersArea #filterConstruct").val(knownDatas.constructor);
                 
                 // Fill the fields with new datas coming from the ajax call on the filters xml file

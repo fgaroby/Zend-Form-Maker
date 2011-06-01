@@ -590,8 +590,6 @@ class Application_Model_XmlManager
                 $datas = array('name' => $name, 'bcof' => false, 'constructor' => '', 'errorMessage' => '');
                 $json = Zend_Json::encode($datas);
                 
-                //Zend_Debug::dump(Zend_Json::prettyPrint($json));
-                
                 return $json;
             }
             else
@@ -616,7 +614,7 @@ class Application_Model_XmlManager
      */
     public function deleteValidator($id, $name)
     {
-        $sxe = new $this->_openXml();
+        $sxe = $this->_openXml();
         
         // Search the element with id
         $element = $sxe->xpath('//element[@id=' . $id . ']/validators/validator[name="' . $name . '"]');
@@ -627,15 +625,11 @@ class Application_Model_XmlManager
             unset($element[0][0]);   
                     
             // Save the new xml file
-            //$result = $sxe->asXml($this->_xmlPath);
             $result = $this->_saveXml($sxe);
             if ($result)
             {
                 $datas = array('name' => $name);
                 $json = Zend_Json::encode($datas);
-                
-                //Zend_Debug::dump(Zend_Json::prettyPrint($json));
-                
                 return $json;
             }
             else
@@ -676,7 +670,6 @@ class Application_Model_XmlManager
                     
             
             // Save the new xml file
-            //$result = $sxe->asXml($this->_xmlPath);
             $result = $this->_saveXml($sxe);
             if ($result)
             {
