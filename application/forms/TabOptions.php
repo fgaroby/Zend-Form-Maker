@@ -41,7 +41,7 @@ class Application_Form_TabOptions extends Zend_Form
 							  )
 					    );
 					    
-        $baseUrl = Zend_Controller_Front::getInstance()->getBaseUrl();      
+        $baseUrl = Zend_Registry::get('baseUrl');   
 		$this->_imgDone = '<img src="' . $baseUrl . '/images/zfm/updateDone.png" alt="The field is up to date" title="The field is up to date" />';
 					    
 		

@@ -6,7 +6,7 @@
 
 <div id="createForm" <?php echo (isset($this->errorsForm)) ? 'style="display:block"' : '';?>>	
 	<div class="spacer_v15"></div>
-	<form action="<?php echo $this->url(array('controller' => 'Index', 'action' => 'form-list'));  ?>" method="post" name="createFormXml" id="createFormXml">
+	<form action="<?php echo $this->baseUrl(); ?>/Index/form-list" method="post" name="createFormXml" id="createFormXml">
 		<input type="text" name="newFormFilename" id="newFormFilename" value="<?php echo $this->formFilename?>" /> 
 			
     	<?php 
@@ -52,36 +52,28 @@
     {
         $formMade = isset($fileDatas['formMade']);
         
-        $urlEdit = $this->url(array('controller' => 'Index', 
-								'action' => 'form-maker', 
-								'formFilename' => $fileDatas['filename']));
+        $urlEdit = '/Index/form-maker/formFilename/' . $fileDatas['filename'];
         
-        $urlDelete = $this->url(array('controller' => 'Index', 
-								'action' => 'form-delete', 
-								'formFilename' => $fileDatas['filename']));
+        $urlDelete ='/Index/form-delete/formFilename/' . $fileDatas['filename'];
         
-        $urlRename = $this->url(array('controller' => 'Index', 
-								'action' => 'form-rename', 
-								'formFilename' => $fileDatas['realname']));
+        $urlRename = '/Index/form-rename/formFilename/' . $fileDatas['realname'];
 
         // If we've a form to test
         if ($formMade)
         {
-            $urlTest = $this->url(array('controller' => 'Index', 
-        								'action' => 'form-test', 
-        								'formFilename' => $fileDatas['formMade']));
+            $urlTest = '/Index/form-test/formFilename' . $fileDatas['formMade'];
         }
         ?>
         <tr class="<?php echo $this->cycle(array('odd', 'even'))->next(); ?>">
         	<td class="actions">        	
-        		<form action="<?php echo $urlDelete; ?>" method="post">
+        		<form action="<?php echo $this->baseUrl() . $urlDelete; ?>" method="post">
         			<input type="hidden" name="formFilename" value="<?php echo $fileDatas['realname']; ?>" />
         			<input type="image" name="sendDeleteForm" id="sendDeleteForm" value="Delete it !" src="<?php echo $this->baseUrl(); ?>/images/zfm/delete.png" />
     			</form>
     			
     			<div class="spacer_h5 floater"></div>
     			
-    			<a href="<?php echo $urlRename; ?>" title="Rename" > 
+    			<a href="<?php echo $this->baseUrl() . $urlRename; ?>" title="Rename" > 
     				<img src="<?php echo $this->baseUrl(); ?>/images/zfm/rename32.png" alt="Rename the form" /> 
     			</a>
     			
@@ -89,7 +81,7 @@
         	</td>
         	
     		<td class="cell link">
-				<a href="<?php echo $urlEdit; ?>" title="Edit the form"><?php echo $fileDatas['realname']; ?></a>
+				<a href="<?php echo $this->baseUrl() . $urlEdit; ?>" title="Edit the form"><?php echo $fileDatas['realname']; ?></a>
     		</td>
     		
     		<td class="cell">
@@ -102,7 +94,7 @@
     		
     		<td class="cell">    		
     		    <?php if ($formMade) : ?>
-    				<a href="<?php echo $urlTest; ?>" title=""><img src="<?php echo $this->baseUrl(); ?>/images/zfm/test.png" title="Test your form" alt="Test it !" /></a>
+    				<a href="<?php echo $this->baseUrl() . $urlTest; ?>" title=""><img src="<?php echo $this->baseUrl(); ?>/images/zfm/test.png" title="Test your form" alt="Test it !" /></a>
     		    <?php endif ; ?>
     		</td>
         </tr>

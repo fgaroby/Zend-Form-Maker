@@ -24,7 +24,7 @@ class IndexController extends Zend_Controller_Action
     
     public function init()
     {
-        $baseUrl = Zend_Controller_Front::getInstance()->getBaseUrl();      
+        $baseUrl = $this->view->baseUrl();  
         $this->_jsDir = $baseUrl . $this->_jsDir;
     }
 
@@ -45,7 +45,7 @@ class IndexController extends Zend_Controller_Action
 
     public function formListAction()
     {          
-        $baseUrl = Zend_Controller_Front::getInstance()->getBaseUrl();      
+        $baseUrl = $this->view->baseUrl();  
         $this->view->headLink()->appendStylesheet($baseUrl . '/css/formList.css');  
         
         
@@ -137,7 +137,7 @@ class IndexController extends Zend_Controller_Action
         $formDir =  $config->zfm->formDir;
         $customCssDir = $config->zfm->customCssDir;
         
-        $baseUrl = Zend_Controller_Front::getInstance()->getBaseUrl();      
+        $baseUrl = $this->view->baseUrl();  
         // Include the user's css for the test part
         $customCssFiles = glob($customCssDir . '*.css');
         foreach($customCssFiles as $file)
@@ -191,7 +191,7 @@ class IndexController extends Zend_Controller_Action
      */
     public function formMakerAction()
     {
-        $baseUrl = Zend_Controller_Front::getInstance()->getBaseUrl();      
+        $baseUrl = $this->view->baseUrl();  
         $view = $this->view;
         
         // System main javascript files

@@ -31,19 +31,19 @@ echo $this->doctype();
 <div id="topPan">
     <ul>
     	<li class="active">
-    		<a href="<?php echo $this->url(array('controller' => 'Index', 'action' => 'index')); ?>">Home</a>
+    		<a href="<?php echo $this->baseUrl(); ?>/Index/index">Home</a>
     	</li>
     
     	<li>
-    		<a href="<?php echo $this->url(array('controller' => 'Index', 'action' => 'form-list')); ?>">Form lists</a>
+    		<a href="<?php echo $this->baseUrl(); ?>/Index/form-list">Form lists</a>
     	</li>
     
     	<li>
-    		<a href="<?php echo $this->url(array('controller' => 'Index', 'action' => 'Help')); ?>">Help</a>
+    		<a href="<?php echo $this->baseUrl(); ?>/Index/Help">Help</a>
     	</li>
     
     	<li class="contact">
-    		<a href="<?php echo $this->url(array('controller' => 'Index', 'action' => 'About')); ?>" class="contact">About</a>
+    		<a href="<?php echo $this->baseUrl(); ?>/Index/About" class="contact">About</a>
     	</li>
     </ul>
 </div>
@@ -64,7 +64,7 @@ echo $this->doctype();
 </div>
 
 
-<div id="ajaxLoader"><img src="/images/zfm/loader.gif" /></div>
+<div id="ajaxLoader"><img src="<?php echo $this->baseUrl(); ?>/images/zfm/loader.gif" /></div>
 <div id="ajaxErrorDetails"></div>
 <div id="dialogAlertMsg"></div>
 <div id="dialogConfirmation"></div>

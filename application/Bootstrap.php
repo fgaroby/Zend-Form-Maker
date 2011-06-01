@@ -32,7 +32,9 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         // Get the base url        
         $frontController = Zend_Controller_Front::getInstance();
         $frontController->setBaseUrl(dirname($_SERVER['SCRIPT_NAME']));
-        $baseUrl = Zend_Controller_Front::getInstance()->getBaseUrl();
+        $baseUrl = Zend_Controller_Front::getInstance()->getBaseUrl();        
+        if (strlen($baseUrl) == 1) $baseUrl = '';
+        Zend_Registry::set('baseUrl', $baseUrl);
         
         // Set the view
         $view = new Zend_View();
@@ -68,8 +70,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
     
     protected function _initRoute()
     {
-        
-        $frontController = Zend_Controller_Front::getInstance();
+        /*$frontController = Zend_Controller_Front::getInstance();
         $frontController->setBaseUrl(dirname($_SERVER['SCRIPT_NAME']));
         $baseUrl = Zend_Controller_Front::getInstance()->getBaseUrl();
         
@@ -78,6 +79,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         $controller->setControllerDirectory('./application/controllers')
                    ->setRouter($router)
                    ->setBaseUrl($baseUrl); // affecte la base d'url
+                   */
         //$response   = $controller->dispatch();
         
         //return $controller;
