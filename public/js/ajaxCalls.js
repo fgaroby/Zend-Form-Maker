@@ -21,7 +21,7 @@ $(document).ready(function()
     (function($)
     {
         var debug37 = true;
-        var urlXmlController = "/xml-manager/";
+        var urlXmlController = site.baseUrl + "/xml-manager/";
 
         $.ajaxCalls =
         {
