@@ -29,28 +29,12 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 
     protected function _initView ()
     {
-        // Get the base url        
-        $frontController = Zend_Controller_Front::getInstance();
-        $frontController->setBaseUrl(dirname($_SERVER['SCRIPT_NAME']));
-        $baseUrl = Zend_Controller_Front::getInstance()->getBaseUrl();        
-        if (strlen($baseUrl) == 1) $baseUrl = '';
-        Zend_Registry::set('baseUrl', $baseUrl);
-        
         // Set the view
-        $view = new Zend_View();
+        $view = new Zend_View();        
         
         $view->doctype('XHTML1_STRICT');
         $view->headTitle('Zend Form Maker v1.0');
         $view->headMeta()->appendHttpEquiv('Content-Type', 'text/html; charset=UTF-8');
-        
-        $view->headLink()->prependStylesheet($baseUrl . '/css/global.css');
-        $view->headLink()->prependStylesheet($baseUrl . '/css/design.css');
-        $view->headLink()->prependStylesheet($baseUrl . '/css/jquery-ui-1.8.12.sunny.css');
-        
-        $view->headScript()->appendFile($baseUrl . '/js/jquery-1.6.min.js');
-        $view->headScript()->appendFile($baseUrl . '/js/jquery-ui-1.8.12.min.js');
-        
-        
         
         // Return it, so it can be stored by the bootstrap
         return $view;
@@ -66,24 +50,6 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
     	
     	$logger = new Zend_Log(new Zend_Log_Writer_Firebug());
     	Zend_Registry::set('logger', $logger);
-    }
-    
-    protected function _initRoute()
-    {
-        /*$frontController = Zend_Controller_Front::getInstance();
-        $frontController->setBaseUrl(dirname($_SERVER['SCRIPT_NAME']));
-        $baseUrl = Zend_Controller_Front::getInstance()->getBaseUrl();
-        
-        $router     = new Zend_Controller_Router_Rewrite();
-        $controller = Zend_Controller_Front::getInstance();
-        $controller->setControllerDirectory('./application/controllers')
-                   ->setRouter($router)
-                   ->setBaseUrl($baseUrl); // affecte la base d'url
-                   */
-        //$response   = $controller->dispatch();
-        
-        //return $controller;
-    }
-    
+    }    
 }
 

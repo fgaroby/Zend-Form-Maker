@@ -4,7 +4,7 @@ Copyright (C) 2011 Matthieu Di Blasio <matthieu.diblasio@gmail.com>
 
 This file is part of Zend Form Maker.
 
-Zend Form Maker is free software: you can redistribute it and/or modify
+Zend Form Maker is free software: you can stribute it and/or modify
 it under the terms of the GNU Affero General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
@@ -24,7 +24,8 @@ class IndexController extends Zend_Controller_Action
     
     public function init()
     {
-        $baseUrl = $this->view->baseUrl();  
+        $baseUrl = $this->view->baseUrl();
+        Zend_Registry::set('baseUrl', $baseUrl);  
         $this->_jsDir = $baseUrl . $this->_jsDir;
     }
 
@@ -88,7 +89,7 @@ class IndexController extends Zend_Controller_Action
         {
             if (!in_array($xmlFile, array('.', '..')) && (strpos($xmlFile, '.xml') !== false))
             {
-                $tmpList['path'] = '/' . $xmlFilesPath . $xmlFile;
+                $tmpList['path'] = $this->view->baseUrl() . '/' . $xmlFilesPath . $xmlFile;
                 $tmpList['filename'] = basename($xmlFile);
                 $tmpList['realname'] = basename($xmlFile, '.xml');
                 $tmpList['date'] = date('Y-m-d H:i:s', filemtime($xmlFilesPath . $xmlFile));
@@ -121,11 +122,11 @@ class IndexController extends Zend_Controller_Action
                 $xmlManager = new Application_Model_XmlManager(null, true);
                 $result = $xmlManager->deleteForm($formFilename);
                 
-                $this->_helper->redirector('form-list', 'index');
+                $this->_helper->redirector->setGotoSimple('form-list', 'Index');
             }
         }
         else
-            $this->_helper->redirector('form-list', 'index');
+            $this->_helper->redirector->setGotoSimple('form-list', 'Index');
     }
 
     
@@ -180,7 +181,7 @@ class IndexController extends Zend_Controller_Action
             }            
         }
         else
-            $this->_helper->redirector('form-list', 'index');
+            $this->_helper->redirector->setGotoSimple('form-list', 'Index');
     }
     
     

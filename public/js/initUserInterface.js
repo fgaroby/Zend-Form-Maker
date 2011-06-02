@@ -295,7 +295,7 @@ $(document).ready(function()
             {
                 if (confirm('Do you want to try your form now ?'))
                 {
-                    window.location = "/Index/form-test/formFilename/" + data.filename;
+                    window.location = site.baseUrl + "/Index/form-test/formFilename/" + data.filename;
                 }
             },
             

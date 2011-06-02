@@ -1,4 +1,5 @@
 <?php
+$baseUrl = $this->baseUrl();
 echo $this->doctype();
 ?>
 <html>
@@ -11,7 +12,11 @@ echo $this->doctype();
     echo $this->headTitle();
     ?>
         
-    <?php
+    <?php        
+    $this->headLink()->prependStylesheet($baseUrl . '/css/global.css');
+    $this->headLink()->prependStylesheet($baseUrl . '/css/design.css');
+    $this->headLink()->prependStylesheet($baseUrl . '/css/jquery-ui-1.8.12.sunny.css');
+    
     echo $this->headLink();
     ?>
     
@@ -72,12 +77,14 @@ echo $this->doctype();
     
     
 
-<?php $this->headScript()->captureStart(); ?>
-site = {
-    baseUrl: "<?php echo $this->baseUrl() ?>"
-};
 <?php 
+$this->headScript()->captureStart(); 
+echo 'site = { baseUrl: "'. $this->baseUrl() . '" };';
 $this->headScript()->captureEnd();
+
+        
+$this->headScript()->prependFile($baseUrl . '/js/jquery-ui-1.8.12.min.js');
+$this->headScript()->prependFile($baseUrl . '/js/jquery-1.6.min.js');
 
 echo $this->headScript(); 
 ?>
