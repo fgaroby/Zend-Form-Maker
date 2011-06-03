@@ -188,7 +188,7 @@ class Application_Model_XmlManager
                     return true;
             }
             else
-                return 'Unable to create the file';
+                return 'Unable to create the file (Check chmod on ' . $dir . ')';
             
         }
         else
