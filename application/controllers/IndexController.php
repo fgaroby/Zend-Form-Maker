@@ -129,6 +129,36 @@ class IndexController extends Zend_Controller_Action
             $this->_helper->redirector->setGotoSimple('form-list', 'Index');
     }
 
+
+	public function formDownloadAction()
+	{
+        $filename = $this->getRequest()->getParam('formFilename') . '.php';
+        // TODO check for the security of path ...
+        $config = Zend_Registry::get('config');
+        $formDir =  $config->zfm->formDir;
+        $formFilepath = $formDir. $filename;
+		if (empty($filename))
+		{
+			$this->_helper->redirector->setGotoSimple('form-list', 'Index');
+		}
+ 
+	    // disable layout and view
+	    $this->view->layout()->disableLayout();
+	    $this->_helper->viewRenderer->setNoRender(true);
+
+		$this->_response->clearBody();
+		$this->_response->clearHeaders();
+
+		$this->_response
+			->setHeader('Content-Type', 'text/plain')
+			->setHeader('Content-Type', 'application/force-download; name="' . $filename . '"')
+			->setHeader('Content-Disposition', 'attachment; filename="' . $filename . '"')
+			->setHeader('Connection', 'close')
+			->setHeader('Content-transfer-encoding', 'binary')
+			->setHeader('Cache-control', 'private');
+	   readfile($formFilepath);
+	}
+
     
     public function formTestAction()
     {
@@ -146,7 +176,6 @@ class IndexController extends Zend_Controller_Action
             $file = substr($file, 1); // Remove the first dot in the filepath
             $this->view->headLink()->appendStylesheet($baseUrl . $file);	
         }
-        
         
         // Build name and path
         $filename = $this->getRequest()->getParam('formFilename');
@@ -178,7 +207,9 @@ class IndexController extends Zend_Controller_Action
                 {
                     $form->populate($params);
                 }
-            }            
+            }
+
+            $this->view->formname = $formName . '.xml';
         }
         else
             $this->_helper->redirector->setGotoSimple('form-list', 'Index');

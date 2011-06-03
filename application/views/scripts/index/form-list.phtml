@@ -57,10 +57,12 @@
         $urlDelete ='/Index/form-delete/formFilename/' . $fileDatas['filename'];
         
         $urlRename = '/Index/form-rename/formFilename/' . $fileDatas['realname'];
-
+        
         // If we've a form to test
         if ($formMade)
         {
+     		$urlDownload = '/Index/form-download/formFilename/' . $fileDatas['realname'];
+
             $urlTest = '/Index/form-test/formFilename/' . $fileDatas['formMade'];
         }
         ?>
@@ -90,6 +92,9 @@
 		    
     		<td class="cell showFile">
     			<a href="<?php echo $fileDatas['path']; ?>" title=""><img src="<?php echo $this->baseUrl(); ?>/images/zfm/xml.png" title="See the xml file" alt="show" /></a>
+    			<?php if ($formMade) : ?>
+    				<a href="<?php echo $this->baseUrl() . $urlDownload; ?>" title=""><img src="<?php echo $this->baseUrl(); ?>/images/zfm/document-save.png" title="Download the php file" alt="download" /></a>
+    			<?php endif ; ?>
     		</td>
     		
     		<td class="cell">    		

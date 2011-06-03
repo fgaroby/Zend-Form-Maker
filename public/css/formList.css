@@ -83,6 +83,10 @@
 	text-decoration: none;
 }
 
+#formList td.cell a:hover {
+	text-decoration: underline;
+}
+
 #formList td.showFile {
 	text-align: center;
 }
