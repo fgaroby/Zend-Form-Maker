@@ -1,48 +1,48 @@
 <h1 id="formListH1">Form's list</h1>
 
 <div id="addFormLink">
-	<a href="#" class="actionLink">Create a new form</a>
+    <a href="#" class="actionLink">Create a new form</a>
 </div>
 
-<div id="createForm" <?php echo (isset($this->errorsForm)) ? 'style="display:block"' : '';?>>	
-	<div class="spacer_v15"></div>
-	<form action="<?php echo $this->baseUrl(); ?>/Index/form-list" method="post" name="createFormXml" id="createFormXml">
-		<input type="text" name="newFormFilename" id="newFormFilename" value="<?php echo $this->formFilename?>" /> 
-			
-    	<?php 
-    	if (isset($this->errorsForm))
-    	{
-    	    ?>
-    	    <div id="errorsForm">
-    	    	<?php echo $this->errorsForm; ?>
-    	    </div>
-    	    <?php 
-    	}
-    	?>
-		<input type="submit" name="sendFormAdd" id="sendFormAdd" value="Save" />
-		<input type="hidden" name="oldName" id="oldName" value="<?php echo $this->oldFilename?>" />
-	</form>
+<div id="createForm" <?php echo (isset($this->errorsForm)) ? 'style="display:block"' : '';?>>
+    <div class="spacer_v15"></div>
+    <form action="<?php echo $this->baseUrl(); ?>/Index/form-list" method="post" name="createFormXml" id="createFormXml">
+        <input type="text" name="newFormFilename" id="newFormFilename" value="<?php echo $this->formFilename?>" /> 
+            
+        <?php 
+        if (isset($this->errorsForm))
+        {
+            ?>
+            <div id="errorsForm">
+                <?php echo $this->errorsForm; ?>
+            </div>
+            <?php 
+        }
+        ?>
+        <input type="submit" name="sendFormAdd" id="sendFormAdd" value="Save" />
+        <input type="hidden" name="oldName" id="oldName" value="<?php echo $this->oldFilename?>" />
+    </form>
 
 </div>
 
 <div class="spacer_v30"></div>
 
 <table id="formList">
-	<tr>
-		<th class="actions"></th>
-		<th class="header">Name</th>
-		<th class="header">Last change</th>		
-		<th class="header showFile">See the file</th>
-		<th class="header">Test</th>
-	</tr>
-	
+    <tr>
+        <th class="actions"></th>
+        <th class="header">Name</th>
+        <th class="header">Last change</th>        
+        <th class="header showFile">See the file</th>
+        <th class="header">Test</th>
+    </tr>
+    
     <?php 
     if (empty($this->fileList))
     {
         ?>
         <tr>
-        	<td></td>
-        	<td colspan="4" style="text-align: center;">No form in the directory, start by creating on with the input above.</td>
+            <td></td>
+            <td colspan="4" style="text-align: center;">No form in the directory, start by creating on with the input above.</td>
         </tr>
         <?php
     }
@@ -61,47 +61,47 @@
         // If we've a form to test
         if ($formMade)
         {
-     		$urlDownload = '/Index/form-download/formFilename/' . $fileDatas['realname'];
+            $urlDownload = '/Index/form-download/formFilename/' . $fileDatas['realname'];
 
             $urlTest = '/Index/form-test/formFilename/' . $fileDatas['formMade'];
         }
         ?>
         <tr class="<?php echo $this->cycle(array('odd', 'even'))->next(); ?>">
-        	<td class="actions">        	
-        		<form action="<?php echo $this->baseUrl() . $urlDelete; ?>" method="post">
-        			<input type="hidden" name="formFilename" value="<?php echo $fileDatas['realname']; ?>" />
-        			<input type="image" name="sendDeleteForm" id="sendDeleteForm" value="Delete it !" src="<?php echo $this->baseUrl(); ?>/images/zfm/delete.png" />
-    			</form>
-    			
-    			<div class="spacer_h5 floater"></div>
-    			
-    			<a href="<?php echo $this->baseUrl() . $urlRename; ?>" title="Rename" > 
-    				<img src="<?php echo $this->baseUrl(); ?>/images/zfm/rename32.png" alt="Rename the form" /> 
-    			</a>
-    			
-    			<div class="spacer_h10 floater"></div>
-        	</td>
-        	
-    		<td class="cell link">
-				<a href="<?php echo $this->baseUrl() . $urlEdit; ?>" title="Edit the form"><?php echo $fileDatas['realname']; ?></a>
-    		</td>
-    		
-    		<td class="cell">
-    		    <?php echo $fileDatas['date']; ?>
-		    </td>
-		    
-    		<td class="cell showFile">
-    			<a href="<?php echo $fileDatas['path']; ?>" title=""><img src="<?php echo $this->baseUrl(); ?>/images/zfm/xml.png" title="See the xml file" alt="show" /></a>
-    			<?php if ($formMade) : ?>
-    				<a href="<?php echo $this->baseUrl() . $urlDownload; ?>" title=""><img src="<?php echo $this->baseUrl(); ?>/images/zfm/document-save.png" title="Download the php file" alt="download" /></a>
-    			<?php endif ; ?>
-    		</td>
-    		
-    		<td class="cell">    		
-    		    <?php if ($formMade) : ?>
-    				<a href="<?php echo $this->baseUrl() . $urlTest; ?>" title=""><img src="<?php echo $this->baseUrl(); ?>/images/zfm/test.png" title="Test your form" alt="Test it !" /></a>
-    		    <?php endif ; ?>
-    		</td>
+            <td class="actions">
+                <form action="<?php echo $this->baseUrl() . $urlDelete; ?>" method="post">
+                    <input type="hidden" name="formFilename" value="<?php echo $fileDatas['realname']; ?>" />
+                    <input type="image" name="sendDeleteForm" id="sendDeleteForm" value="Delete it !" src="<?php echo $this->baseUrl(); ?>/images/zfm/delete.png" />
+                </form>
+                
+                <div class="spacer_h5 floater"></div>
+                
+                <a href="<?php echo $this->baseUrl() . $urlRename; ?>" title="Rename" > 
+                    <img src="<?php echo $this->baseUrl(); ?>/images/zfm/rename32.png" alt="Rename the form" /> 
+                </a>
+                
+                <div class="spacer_h10 floater"></div>
+            </td>
+            
+            <td class="cell link">
+                <a href="<?php echo $this->baseUrl() . $urlEdit; ?>" title="Edit the form"><?php echo $fileDatas['realname']; ?></a>
+            </td>
+            
+            <td class="cell">
+                <?php echo $fileDatas['date']; ?>
+            </td>
+            
+            <td class="cell showFile">
+                <a href="<?php echo $fileDatas['path']; ?>" title=""><img src="<?php echo $this->baseUrl(); ?>/images/zfm/xml.png" title="See the xml file" alt="show" /></a>
+                <?php if ($formMade) : ?>
+                    <a href="<?php echo $this->baseUrl() . $urlDownload; ?>" title=""><img src="<?php echo $this->baseUrl(); ?>/images/zfm/document-save.png" title="Download the php file" alt="download" /></a>
+                <?php endif ; ?>
+            </td>
+            
+            <td class="cell">            
+                <?php if ($formMade) : ?>
+                    <a href="<?php echo $this->baseUrl() . $urlTest; ?>" title=""><img src="<?php echo $this->baseUrl(); ?>/images/zfm/test.png" title="Test your form" alt="Test it !" /></a>
+                <?php endif ; ?>
+            </td>
         </tr>
         <?php 
     }

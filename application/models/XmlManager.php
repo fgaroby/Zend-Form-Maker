@@ -201,11 +201,11 @@ class Application_Model_XmlManager
      */
     public function deleteForm($formFilename)
     {
-		$config =Zend_Registry::get('config');
+        $config =Zend_Registry::get('config');
         $dir = $config->zfm->formXmlDir;
         $filePath = $dir . $formFilename . '.xml';
-		$dirFormMade = $config->zfm->formDir;
-		$formMadePath = $dirFormMade . $formFilename . '.php';
+        $dirFormMade = $config->zfm->formDir;
+        $formMadePath = $dirFormMade . $formFilename . '.php';
         
         if (file_exists($filePath))
         {

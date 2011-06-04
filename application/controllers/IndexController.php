@@ -130,34 +130,34 @@ class IndexController extends Zend_Controller_Action
     }
 
 
-	public function formDownloadAction()
-	{
+    public function formDownloadAction()
+    {
         $filename = $this->getRequest()->getParam('formFilename') . '.php';
         // TODO check for the security of path ...
         $config = Zend_Registry::get('config');
         $formDir =  $config->zfm->formDir;
         $formFilepath = $formDir. $filename;
-		if (empty($filename))
-		{
-			$this->_helper->redirector->setGotoSimple('form-list', 'Index');
-		}
+        if (empty($filename))
+        {
+            $this->_helper->redirector->setGotoSimple('form-list', 'Index');
+        }
  
-	    // disable layout and view
-	    $this->view->layout()->disableLayout();
-	    $this->_helper->viewRenderer->setNoRender(true);
+        // disable layout and view
+        $this->view->layout()->disableLayout();
+        $this->_helper->viewRenderer->setNoRender(true);
 
-		$this->_response->clearBody();
-		$this->_response->clearHeaders();
+        $this->_response->clearBody();
+        $this->_response->clearHeaders();
 
-		$this->_response
-			->setHeader('Content-Type', 'text/plain')
-			->setHeader('Content-Type', 'application/force-download; name="' . $filename . '"')
-			->setHeader('Content-Disposition', 'attachment; filename="' . $filename . '"')
-			->setHeader('Connection', 'close')
-			->setHeader('Content-transfer-encoding', 'binary')
-			->setHeader('Cache-control', 'private');
-	   readfile($formFilepath);
-	}
+        $this->_response
+            ->setHeader('Content-Type', 'text/plain')
+            ->setHeader('Content-Type', 'application/force-download; name="' . $filename . '"')
+            ->setHeader('Content-Disposition', 'attachment; filename="' . $filename . '"')
+            ->setHeader('Connection', 'close')
+            ->setHeader('Content-transfer-encoding', 'binary')
+            ->setHeader('Cache-control', 'private');
+       readfile($formFilepath);
+    }
 
     
     public function formTestAction()
@@ -174,7 +174,7 @@ class IndexController extends Zend_Controller_Action
         foreach($customCssFiles as $file)
         {
             $file = substr($file, 1); // Remove the first dot in the filepath
-            $this->view->headLink()->appendStylesheet($baseUrl . $file);	
+            $this->view->headLink()->appendStylesheet($baseUrl . $file);
         }
         
         // Build name and path
@@ -230,32 +230,32 @@ class IndexController extends Zend_Controller_Action
         $view->headScript()->appendFile($this->_jsDir . 'zfmVars.js');
         $view->headScript()->appendFile($this->_jsDir . 'tools.js');
         
-    	$view->headScript()->appendFile($this->_jsDir . 'initUserInterface.js'); 
-    	$view->headScript()->appendFile($this->_jsDir . 'ajaxCalls.js');
-    	$view->headScript()->appendFile($this->_jsDir . 'elementManager.js');   	    	
-    	$view->headScript()->appendFile($this->_jsDir . 'elUpdateManager.js');   	
-    	
-    	// Add the edit element tabs js files
-    	$view->headScript()->appendFile($this->_jsDir . 'editElementTabGeneral.js');
-    	$view->headScript()->appendFile($this->_jsDir . 'editElementTabValidators.js');
-    	$view->headScript()->appendFile($this->_jsDir . 'editElementTabFilters.js');
-    	$view->headScript()->appendFile($this->_jsDir . 'editElementTabOptions.js');
-    	$view->headScript()->appendFile($this->_jsDir . 'editElementTabDecorators.js');   	
-    		        
+        $view->headScript()->appendFile($this->_jsDir . 'initUserInterface.js'); 
+        $view->headScript()->appendFile($this->_jsDir . 'ajaxCalls.js');
+        $view->headScript()->appendFile($this->_jsDir . 'elementManager.js');
+        $view->headScript()->appendFile($this->_jsDir . 'elUpdateManager.js');
+
+        // Add the edit element tabs js files
+        $view->headScript()->appendFile($this->_jsDir . 'editElementTabGeneral.js');
+        $view->headScript()->appendFile($this->_jsDir . 'editElementTabValidators.js');
+        $view->headScript()->appendFile($this->_jsDir . 'editElementTabFilters.js');
+        $view->headScript()->appendFile($this->_jsDir . 'editElementTabOptions.js');
+        $view->headScript()->appendFile($this->_jsDir . 'editElementTabDecorators.js');
+
         // My css
         $view->headLink()->appendStylesheet($baseUrl . '/css/formMaker.css');  
         $view->headLink()->appendStylesheet($baseUrl .'/css/formMakerDialogs.css');          
         
         // Jquery libraries
-        $view->headScript()->appendFile($this->_jsDir . 'jquery.contextMenu.js');		
+        $view->headScript()->appendFile($this->_jsDir . 'jquery.contextMenu.js');
         $view->headScript()->appendFile($this->_jsDir . 'jquery.toastmessage.js');
-        $view->headScript()->appendFile($this->_jsDir . 'jquery.selectboxes.js');	 
-        $view->headScript()->appendFile($this->_jsDir . 'jquery.tooltip.js');	 
-        
+        $view->headScript()->appendFile($this->_jsDir . 'jquery.selectboxes.js');
+        $view->headScript()->appendFile($this->_jsDir . 'jquery.tooltip.js');
+
         // Jquery librairies CSS
-		$view->headLink()->appendStylesheet($baseUrl .'/css/jquery.contextMenu.css');	
-        $view->headLink()->appendStylesheet($baseUrl .'/css/jquery.toastmessage.css'); 
-        $view->headLink()->appendStylesheet($baseUrl .'/css/jquery.tooltip.css'); 
+        $view->headLink()->appendStylesheet($baseUrl .'/css/jquery.contextMenu.css');
+        $view->headLink()->appendStylesheet($baseUrl .'/css/jquery.toastmessage.css');
+        $view->headLink()->appendStylesheet($baseUrl .'/css/jquery.tooltip.css');
         
         
         
